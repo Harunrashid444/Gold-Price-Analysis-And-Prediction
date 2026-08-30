@@ -1,0 +1,11 @@
+# Packages required for Phase 1 (data prep) through Phase 7 (future forecast).
+# Only what is actually imported across src/*.py is listed here.
+#
+# requests / beautifulsoup4 are only needed if the original web-scraping step
+# (pre_processing/scrapped.py) is re-run - not required to execute this pipeline.
+
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+statsmodels>=0.14
+scikit-learn>=1.3
