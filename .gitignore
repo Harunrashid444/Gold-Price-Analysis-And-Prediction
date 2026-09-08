@@ -17,5 +17,8 @@ dist/
 .DS_Store
 .claude/
 
+# Internal docs (not tracked)
+docs/
+
 # Generated artifacts
 plots/
