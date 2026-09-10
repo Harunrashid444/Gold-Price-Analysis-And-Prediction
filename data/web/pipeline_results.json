@@ -1,0 +1,5276 @@
+{
+  "generatedBy": "export_web_results.py (wraps existing src/*.py; does not reimplement models)",
+  "forecastHorizonMonths": 12,
+  "forecastModelNote": "Phase 7 uses Multiple Regression for both series because Phase 6 found it had the lower test RMSE. Forecast bands are predicted +/- 1.96 * test RMSE (an approximate band, not a statistically rigorous prediction interval).",
+  "disclaimer": "Historical academic analysis only. Not real-time prices, not investment advice, and forecasts are not guaranteed.",
+  "datasets": {
+    "global": {
+      "dataset": "global",
+      "source": "World Gold Council (1978\u20132018)",
+      "currency": "USD",
+      "frequency": "Monthly",
+      "priceColumn": "Price_USD",
+      "startDate": "1978-12-31",
+      "endDate": "2018-08-31",
+      "observations": 477,
+      "latestPrice": 1201.3,
+      "latestDate": "2018-08-31"
+    },
+    "india": {
+      "dataset": "india",
+      "source": "Gold Price India (scraped daily, resampled to monthly mean, 2011\u20132018)",
+      "currency": "INR",
+      "frequency": "Monthly",
+      "priceColumn": "Price_INR",
+      "startDate": "2011-01-31",
+      "endDate": "2018-11-30",
+      "observations": 95,
+      "latestPrice": 3130.25,
+      "latestDate": "2018-11-30"
+    }
+  },
+  "analysis": {
+    "global": {
+      "historical": [
+        {
+          "date": "1978-12-31",
+          "price": 207.8
+        },
+        {
+          "date": "1979-01-31",
+          "price": 227.3
+        },
+        {
+          "date": "1979-02-28",
+          "price": 245.7
+        },
+        {
+          "date": "1979-03-30",
+          "price": 242.1
+        },
+        {
+          "date": "1979-04-30",
+          "price": 239.2
+        },
+        {
+          "date": "1979-05-31",
+          "price": 257.6
+        },
+        {
+          "date": "1979-06-29",
+          "price": 279.1
+        },
+        {
+          "date": "1979-07-31",
+          "price": 294.7
+        },
+        {
+          "date": "1979-08-31",
+          "price": 300.8
+        },
+        {
+          "date": "1979-09-28",
+          "price": 355.1
+        },
+        {
+          "date": "1979-10-31",
+          "price": 391.7
+        },
+        {
+          "date": "1979-11-30",
+          "price": 392.0,
+          "movingAverage": 286.09
+        },
+        {
+          "date": "1979-12-31",
+          "price": 455.1,
+          "movingAverage": 306.7
+        },
+        {
+          "date": "1980-01-31",
+          "price": 675.3,
+          "movingAverage": 344.03
+        },
+        {
+          "date": "1980-02-29",
+          "price": 665.3,
+          "movingAverage": 379.0
+        },
+        {
+          "date": "1980-03-31",
+          "price": 553.6,
+          "movingAverage": 404.96
+        },
+        {
+          "date": "1980-04-30",
+          "price": 517.4,
+          "movingAverage": 428.14
+        },
+        {
+          "date": "1980-05-30",
+          "price": 513.8,
+          "movingAverage": 449.49
+        },
+        {
+          "date": "1980-06-30",
+          "price": 600.7,
+          "movingAverage": 476.29
+        },
+        {
+          "date": "1980-07-31",
+          "price": 644.3,
+          "movingAverage": 505.43
+        },
+        {
+          "date": "1980-08-29",
+          "price": 627.2,
+          "movingAverage": 532.62
+        },
+        {
+          "date": "1980-09-30",
+          "price": 673.6,
+          "movingAverage": 559.17
+        },
+        {
+          "date": "1980-10-31",
+          "price": 661.2,
+          "movingAverage": 581.62
+        },
+        {
+          "date": "1980-11-28",
+          "price": 623.5,
+          "movingAverage": 600.92
+        },
+        {
+          "date": "1980-12-31",
+          "price": 594.9,
+          "movingAverage": 612.57
+        },
+        {
+          "date": "1981-01-30",
+          "price": 557.4,
+          "movingAverage": 602.74
+        },
+        {
+          "date": "1981-02-27",
+          "price": 499.8,
+          "movingAverage": 588.95
+        },
+        {
+          "date": "1981-03-31",
+          "price": 498.8,
+          "movingAverage": 584.38
+        },
+        {
+          "date": "1981-04-30",
+          "price": 495.8,
+          "movingAverage": 582.58
+        },
+        {
+          "date": "1981-05-29",
+          "price": 479.7,
+          "movingAverage": 579.74
+        },
+        {
+          "date": "1981-06-30",
+          "price": 460.8,
+          "movingAverage": 568.08
+        },
+        {
+          "date": "1981-07-31",
+          "price": 409.3,
+          "movingAverage": 548.5
+        },
+        {
+          "date": "1981-08-31",
+          "price": 410.2,
+          "movingAverage": 530.42
+        },
+        {
+          "date": "1981-09-30",
+          "price": 443.8,
+          "movingAverage": 511.27
+        },
+        {
+          "date": "1981-10-30",
+          "price": 437.8,
+          "movingAverage": 492.65
+        },
+        {
+          "date": "1981-11-30",
+          "price": 413.4,
+          "movingAverage": 475.14
+        },
+        {
+          "date": "1981-12-31",
+          "price": 410.1,
+          "movingAverage": 459.74
+        },
+        {
+          "date": "1982-01-29",
+          "price": 384.1,
+          "movingAverage": 445.3
+        },
+        {
+          "date": "1982-02-26",
+          "price": 374.1,
+          "movingAverage": 434.83
+        },
+        {
+          "date": "1982-03-31",
+          "price": 330.3,
+          "movingAverage": 420.78
+        },
+        {
+          "date": "1982-04-30",
+          "price": 350.3,
+          "movingAverage": 408.66
+        },
+        {
+          "date": "1982-05-31",
+          "price": 333.8,
+          "movingAverage": 396.5
+        },
+        {
+          "date": "1982-06-30",
+          "price": 315.0,
+          "movingAverage": 384.35
+        },
+        {
+          "date": "1982-07-30",
+          "price": 339.0,
+          "movingAverage": 378.49
+        },
+        {
+          "date": "1982-08-31",
+          "price": 364.2,
+          "movingAverage": 374.66
+        },
+        {
+          "date": "1982-09-30",
+          "price": 437.3,
+          "movingAverage": 374.12
+        },
+        {
+          "date": "1982-10-29",
+          "price": 422.2,
+          "movingAverage": 372.82
+        },
+        {
+          "date": "1982-11-30",
+          "price": 414.9,
+          "movingAverage": 372.94
+        },
+        {
+          "date": "1982-12-31",
+          "price": 444.3,
+          "movingAverage": 375.79
+        },
+        {
+          "date": "1983-01-31",
+          "price": 481.3,
+          "movingAverage": 383.89
+        },
+        {
+          "date": "1983-02-28",
+          "price": 491.2,
+          "movingAverage": 393.65
+        },
+        {
+          "date": "1983-03-31",
+          "price": 419.7,
+          "movingAverage": 401.1
+        },
+        {
+          "date": "1983-04-29",
+          "price": 432.9,
+          "movingAverage": 407.98
+        },
+        {
+          "date": "1983-05-31",
+          "price": 438.0,
+          "movingAverage": 416.67
+        },
+        {
+          "date": "1983-06-30",
+          "price": 412.8,
+          "movingAverage": 424.82
+        },
+        {
+          "date": "1983-07-29",
+          "price": 422.7,
+          "movingAverage": 431.79
+        },
+        {
+          "date": "1983-08-31",
+          "price": 416.2,
+          "movingAverage": 436.12
+        },
+        {
+          "date": "1983-09-30",
+          "price": 411.8,
+          "movingAverage": 434.0
+        },
+        {
+          "date": "1983-10-31",
+          "price": 393.6,
+          "movingAverage": 431.62
+        },
+        {
+          "date": "1983-11-30",
+          "price": 381.7,
+          "movingAverage": 428.85
+        },
+        {
+          "date": "1983-12-30",
+          "price": 388.3,
+          "movingAverage": 424.18
+        },
+        {
+          "date": "1984-01-31",
+          "price": 370.9,
+          "movingAverage": 414.98
+        },
+        {
+          "date": "1984-02-29",
+          "price": 385.9,
+          "movingAverage": 406.21
+        },
+        {
+          "date": "1984-03-30",
+          "price": 394.3,
+          "movingAverage": 404.09
+        },
+        {
+          "date": "1984-04-30",
+          "price": 381.4,
+          "movingAverage": 399.8
+        },
+        {
+          "date": "1984-05-31",
+          "price": 377.4,
+          "movingAverage": 394.75
+        },
+        {
+          "date": "1984-06-29",
+          "price": 377.7,
+          "movingAverage": 391.83
+        },
+        {
+          "date": "1984-07-31",
+          "price": 347.5,
+          "movingAverage": 385.56
+        },
+        {
+          "date": "1984-08-31",
+          "price": 347.7,
+          "movingAverage": 379.85
+        },
+        {
+          "date": "1984-09-28",
+          "price": 341.1,
+          "movingAverage": 373.96
+        },
+        {
+          "date": "1984-10-31",
+          "price": 340.2,
+          "movingAverage": 369.51
+        },
+        {
+          "date": "1984-11-30",
+          "price": 341.2,
+          "movingAverage": 366.13
+        },
+        {
+          "date": "1984-12-31",
+          "price": 320.2,
+          "movingAverage": 360.46
+        },
+        {
+          "date": "1985-01-31",
+          "price": 302.8,
+          "movingAverage": 354.78
+        },
+        {
+          "date": "1985-02-28",
+          "price": 299.1,
+          "movingAverage": 347.55
+        },
+        {
+          "date": "1985-03-29",
+          "price": 303.9,
+          "movingAverage": 340.02
+        },
+        {
+          "date": "1985-04-30",
+          "price": 325.3,
+          "movingAverage": 335.34
+        },
+        {
+          "date": "1985-05-31",
+          "price": 316.4,
+          "movingAverage": 330.26
+        },
+        {
+          "date": "1985-06-28",
+          "price": 316.5,
+          "movingAverage": 325.16
+        },
+        {
+          "date": "1985-07-31",
+          "price": 317.2,
+          "movingAverage": 322.63
+        },
+        {
+          "date": "1985-08-30",
+          "price": 329.8,
+          "movingAverage": 321.14
+        },
+        {
+          "date": "1985-09-30",
+          "price": 323.4,
+          "movingAverage": 319.67
+        },
+        {
+          "date": "1985-10-31",
+          "price": 325.8,
+          "movingAverage": 318.47
+        },
+        {
+          "date": "1985-11-29",
+          "price": 325.3,
+          "movingAverage": 317.14
+        },
+        {
+          "date": "1985-12-31",
+          "price": 321.9,
+          "movingAverage": 317.28
+        },
+        {
+          "date": "1986-01-31",
+          "price": 345.4,
+          "movingAverage": 320.83
+        },
+        {
+          "date": "1986-02-28",
+          "price": 338.9,
+          "movingAverage": 324.15
+        },
+        {
+          "date": "1986-03-31",
+          "price": 345.7,
+          "movingAverage": 327.63
+        },
+        {
+          "date": "1986-04-30",
+          "price": 340.4,
+          "movingAverage": 328.89
+        },
+        {
+          "date": "1986-05-30",
+          "price": 342.4,
+          "movingAverage": 331.06
+        },
+        {
+          "date": "1986-06-30",
+          "price": 342.7,
+          "movingAverage": 333.24
+        },
+        {
+          "date": "1986-07-31",
+          "price": 348.3,
+          "movingAverage": 335.83
+        },
+        {
+          "date": "1986-08-29",
+          "price": 376.6,
+          "movingAverage": 339.73
+        },
+        {
+          "date": "1986-09-30",
+          "price": 417.7,
+          "movingAverage": 347.59
+        },
+        {
+          "date": "1986-10-31",
+          "price": 423.5,
+          "movingAverage": 355.73
+        },
+        {
+          "date": "1986-11-28",
+          "price": 397.6,
+          "movingAverage": 361.76
+        },
+        {
+          "date": "1986-12-31",
+          "price": 390.9,
+          "movingAverage": 367.51
+        },
+        {
+          "date": "1987-01-30",
+          "price": 408.3,
+          "movingAverage": 372.75
+        },
+        {
+          "date": "1987-02-27",
+          "price": 401.1,
+          "movingAverage": 377.93
+        },
+        {
+          "date": "1987-03-31",
+          "price": 408.9,
+          "movingAverage": 383.2
+        },
+        {
+          "date": "1987-04-30",
+          "price": 438.4,
+          "movingAverage": 391.37
+        },
+        {
+          "date": "1987-05-29",
+          "price": 460.2,
+          "movingAverage": 401.18
+        },
+        {
+          "date": "1987-06-30",
+          "price": 449.6,
+          "movingAverage": 410.09
+        },
+        {
+          "date": "1987-07-31",
+          "price": 450.5,
+          "movingAverage": 418.61
+        },
+        {
+          "date": "1987-08-31",
+          "price": 461.2,
+          "movingAverage": 425.66
+        },
+        {
+          "date": "1987-09-30",
+          "price": 460.4,
+          "movingAverage": 429.22
+        },
+        {
+          "date": "1987-10-30",
+          "price": 465.4,
+          "movingAverage": 432.71
+        },
+        {
+          "date": "1987-11-30",
+          "price": 467.6,
+          "movingAverage": 438.54
+        },
+        {
+          "date": "1987-12-31",
+          "price": 486.2,
+          "movingAverage": 446.48
+        },
+        {
+          "date": "1988-01-29",
+          "price": 476.6,
+          "movingAverage": 452.17
+        },
+        {
+          "date": "1988-02-29",
+          "price": 442.1,
+          "movingAverage": 455.59
+        },
+        {
+          "date": "1988-03-31",
+          "price": 443.6,
+          "movingAverage": 458.48
+        },
+        {
+          "date": "1988-04-29",
+          "price": 451.6,
+          "movingAverage": 459.58
+        },
+        {
+          "date": "1988-05-31",
+          "price": 451.1,
+          "movingAverage": 458.83
+        },
+        {
+          "date": "1988-06-30",
+          "price": 451.3,
+          "movingAverage": 458.97
+        },
+        {
+          "date": "1988-07-29",
+          "price": 437.6,
+          "movingAverage": 457.89
+        },
+        {
+          "date": "1988-08-31",
+          "price": 431.3,
+          "movingAverage": 455.4
+        },
+        {
+          "date": "1988-09-30",
+          "price": 413.5,
+          "movingAverage": 451.49
+        },
+        {
+          "date": "1988-10-31",
+          "price": 406.8,
+          "movingAverage": 446.61
+        },
+        {
+          "date": "1988-11-30",
+          "price": 420.2,
+          "movingAverage": 442.66
+        },
+        {
+          "date": "1988-12-30",
+          "price": 419.1,
+          "movingAverage": 437.07
+        },
+        {
+          "date": "1989-01-31",
+          "price": 404.0,
+          "movingAverage": 431.02
+        },
+        {
+          "date": "1989-02-28",
+          "price": 387.5,
+          "movingAverage": 426.47
+        },
+        {
+          "date": "1989-03-31",
+          "price": 390.2,
+          "movingAverage": 422.02
+        },
+        {
+          "date": "1989-04-28",
+          "price": 384.4,
+          "movingAverage": 416.42
+        },
+        {
+          "date": "1989-05-31",
+          "price": 371.1,
+          "movingAverage": 409.75
+        },
+        {
+          "date": "1989-06-30",
+          "price": 367.6,
+          "movingAverage": 402.77
+        },
+        {
+          "date": "1989-07-31",
+          "price": 375.0,
+          "movingAverage": 397.56
+        },
+        {
+          "date": "1989-08-31",
+          "price": 365.1,
+          "movingAverage": 392.04
+        },
+        {
+          "date": "1989-09-29",
+          "price": 361.8,
+          "movingAverage": 387.73
+        },
+        {
+          "date": "1989-10-31",
+          "price": 366.9,
+          "movingAverage": 384.41
+        },
+        {
+          "date": "1989-11-30",
+          "price": 394.3,
+          "movingAverage": 382.25
+        },
+        {
+          "date": "1989-12-29",
+          "price": 409.4,
+          "movingAverage": 381.44
+        },
+        {
+          "date": "1990-01-31",
+          "price": 410.1,
+          "movingAverage": 381.95
+        },
+        {
+          "date": "1990-02-28",
+          "price": 416.8,
+          "movingAverage": 384.39
+        },
+        {
+          "date": "1990-03-30",
+          "price": 393.1,
+          "movingAverage": 384.63
+        },
+        {
+          "date": "1990-04-30",
+          "price": 374.2,
+          "movingAverage": 383.78
+        },
+        {
+          "date": "1990-05-31",
+          "price": 369.1,
+          "movingAverage": 383.62
+        },
+        {
+          "date": "1990-06-29",
+          "price": 352.3,
+          "movingAverage": 382.34
+        },
+        {
+          "date": "1990-07-31",
+          "price": 362.5,
+          "movingAverage": 381.3
+        },
+        {
+          "date": "1990-08-31",
+          "price": 394.7,
+          "movingAverage": 383.77
+        },
+        {
+          "date": "1990-09-28",
+          "price": 389.3,
+          "movingAverage": 386.06
+        },
+        {
+          "date": "1990-10-31",
+          "price": 380.7,
+          "movingAverage": 387.21
+        },
+        {
+          "date": "1990-11-30",
+          "price": 381.7,
+          "movingAverage": 386.16
+        },
+        {
+          "date": "1990-12-31",
+          "price": 377.0,
+          "movingAverage": 383.46
+        },
+        {
+          "date": "1991-01-31",
+          "price": 383.6,
+          "movingAverage": 381.25
+        },
+        {
+          "date": "1991-02-28",
+          "price": 363.8,
+          "movingAverage": 376.83
+        },
+        {
+          "date": "1991-03-29",
+          "price": 363.3,
+          "movingAverage": 374.35
+        },
+        {
+          "date": "1991-04-30",
+          "price": 358.4,
+          "movingAverage": 373.03
+        },
+        {
+          "date": "1991-05-31",
+          "price": 357.0,
+          "movingAverage": 372.03
+        },
+        {
+          "date": "1991-06-28",
+          "price": 366.7,
+          "movingAverage": 373.22
+        },
+        {
+          "date": "1991-07-31",
+          "price": 367.7,
+          "movingAverage": 373.66
+        },
+        {
+          "date": "1991-08-30",
+          "price": 356.3,
+          "movingAverage": 370.46
+        },
+        {
+          "date": "1991-09-30",
+          "price": 348.7,
+          "movingAverage": 367.08
+        },
+        {
+          "date": "1991-10-31",
+          "price": 358.7,
+          "movingAverage": 365.24
+        },
+        {
+          "date": "1991-11-29",
+          "price": 360.2,
+          "movingAverage": 363.45
+        },
+        {
+          "date": "1991-12-31",
+          "price": 361.7,
+          "movingAverage": 362.18
+        },
+        {
+          "date": "1992-01-31",
+          "price": 354.5,
+          "movingAverage": 359.75
+        },
+        {
+          "date": "1992-02-28",
+          "price": 353.9,
+          "movingAverage": 358.93
+        },
+        {
+          "date": "1992-03-31",
+          "price": 344.3,
+          "movingAverage": 357.34
+        },
+        {
+          "date": "1992-04-30",
+          "price": 338.6,
+          "movingAverage": 355.69
+        },
+        {
+          "date": "1992-05-29",
+          "price": 337.2,
+          "movingAverage": 354.04
+        },
+        {
+          "date": "1992-06-30",
+          "price": 340.8,
+          "movingAverage": 351.88
+        },
+        {
+          "date": "1992-07-31",
+          "price": 352.7,
+          "movingAverage": 350.63
+        },
+        {
+          "date": "1992-08-31",
+          "price": 343.1,
+          "movingAverage": 349.53
+        },
+        {
+          "date": "1992-09-30",
+          "price": 345.4,
+          "movingAverage": 349.26
+        },
+        {
+          "date": "1992-10-30",
+          "price": 344.4,
+          "movingAverage": 348.07
+        },
+        {
+          "date": "1992-11-30",
+          "price": 335.0,
+          "movingAverage": 345.97
+        },
+        {
+          "date": "1992-12-31",
+          "price": 334.8,
+          "movingAverage": 343.72
+        },
+        {
+          "date": "1993-01-29",
+          "price": 329.0,
+          "movingAverage": 341.6
+        },
+        {
+          "date": "1993-02-26",
+          "price": 329.3,
+          "movingAverage": 339.55
+        },
+        {
+          "date": "1993-03-31",
+          "price": 330.1,
+          "movingAverage": 338.37
+        },
+        {
+          "date": "1993-04-30",
+          "price": 342.2,
+          "movingAverage": 338.67
+        },
+        {
+          "date": "1993-05-31",
+          "price": 367.2,
+          "movingAverage": 341.17
+        },
+        {
+          "date": "1993-06-30",
+          "price": 371.9,
+          "movingAverage": 343.76
+        },
+        {
+          "date": "1993-07-30",
+          "price": 392.2,
+          "movingAverage": 347.05
+        },
+        {
+          "date": "1993-08-31",
+          "price": 378.8,
+          "movingAverage": 350.02
+        },
+        {
+          "date": "1993-09-30",
+          "price": 355.3,
+          "movingAverage": 350.85
+        },
+        {
+          "date": "1993-10-29",
+          "price": 364.2,
+          "movingAverage": 352.5
+        },
+        {
+          "date": "1993-11-30",
+          "price": 373.8,
+          "movingAverage": 355.73
+        },
+        {
+          "date": "1993-12-31",
+          "price": 383.3,
+          "movingAverage": 359.78
+        },
+        {
+          "date": "1994-01-31",
+          "price": 386.9,
+          "movingAverage": 364.6
+        },
+        {
+          "date": "1994-02-28",
+          "price": 381.9,
+          "movingAverage": 368.98
+        },
+        {
+          "date": "1994-03-31",
+          "price": 384.1,
+          "movingAverage": 373.48
+        },
+        {
+          "date": "1994-04-29",
+          "price": 377.3,
+          "movingAverage": 376.41
+        },
+        {
+          "date": "1994-05-31",
+          "price": 381.4,
+          "movingAverage": 377.59
+        },
+        {
+          "date": "1994-06-30",
+          "price": 385.6,
+          "movingAverage": 378.73
+        },
+        {
+          "date": "1994-07-29",
+          "price": 385.5,
+          "movingAverage": 378.17
+        },
+        {
+          "date": "1994-08-31",
+          "price": 380.4,
+          "movingAverage": 378.31
+        },
+        {
+          "date": "1994-09-30",
+          "price": 391.6,
+          "movingAverage": 381.33
+        },
+        {
+          "date": "1994-10-31",
+          "price": 389.8,
+          "movingAverage": 383.47
+        },
+        {
+          "date": "1994-11-30",
+          "price": 384.4,
+          "movingAverage": 384.35
+        },
+        {
+          "date": "1994-12-30",
+          "price": 379.3,
+          "movingAverage": 384.02
+        },
+        {
+          "date": "1995-01-31",
+          "price": 378.6,
+          "movingAverage": 383.32
+        },
+        {
+          "date": "1995-02-28",
+          "price": 376.6,
+          "movingAverage": 382.88
+        },
+        {
+          "date": "1995-03-31",
+          "price": 382.1,
+          "movingAverage": 382.72
+        },
+        {
+          "date": "1995-04-28",
+          "price": 391.0,
+          "movingAverage": 383.86
+        },
+        {
+          "date": "1995-05-31",
+          "price": 385.2,
+          "movingAverage": 384.17
+        },
+        {
+          "date": "1995-06-30",
+          "price": 387.6,
+          "movingAverage": 384.34
+        },
+        {
+          "date": "1995-07-31",
+          "price": 386.2,
+          "movingAverage": 384.4
+        },
+        {
+          "date": "1995-08-31",
+          "price": 383.7,
+          "movingAverage": 384.67
+        },
+        {
+          "date": "1995-09-29",
+          "price": 383.1,
+          "movingAverage": 383.97
+        },
+        {
+          "date": "1995-10-31",
+          "price": 383.1,
+          "movingAverage": 383.41
+        },
+        {
+          "date": "1995-11-30",
+          "price": 385.3,
+          "movingAverage": 383.48
+        },
+        {
+          "date": "1995-12-29",
+          "price": 387.4,
+          "movingAverage": 384.16
+        },
+        {
+          "date": "1996-01-31",
+          "price": 399.5,
+          "movingAverage": 385.9
+        },
+        {
+          "date": "1996-02-29",
+          "price": 404.8,
+          "movingAverage": 388.25
+        },
+        {
+          "date": "1996-03-29",
+          "price": 396.2,
+          "movingAverage": 389.43
+        },
+        {
+          "date": "1996-04-30",
+          "price": 392.9,
+          "movingAverage": 389.58
+        },
+        {
+          "date": "1996-05-31",
+          "price": 391.9,
+          "movingAverage": 390.14
+        },
+        {
+          "date": "1996-06-28",
+          "price": 385.3,
+          "movingAverage": 389.95
+        },
+        {
+          "date": "1996-07-31",
+          "price": 383.5,
+          "movingAverage": 389.72
+        },
+        {
+          "date": "1996-08-30",
+          "price": 387.3,
+          "movingAverage": 390.03
+        },
+        {
+          "date": "1996-09-30",
+          "price": 383.2,
+          "movingAverage": 390.03
+        },
+        {
+          "date": "1996-10-31",
+          "price": 381.1,
+          "movingAverage": 389.87
+        },
+        {
+          "date": "1996-11-29",
+          "price": 377.9,
+          "movingAverage": 389.25
+        },
+        {
+          "date": "1996-12-31",
+          "price": 369.0,
+          "movingAverage": 387.72
+        },
+        {
+          "date": "1997-01-31",
+          "price": 355.1,
+          "movingAverage": 384.02
+        },
+        {
+          "date": "1997-02-28",
+          "price": 346.6,
+          "movingAverage": 379.17
+        },
+        {
+          "date": "1997-03-31",
+          "price": 351.8,
+          "movingAverage": 375.47
+        },
+        {
+          "date": "1997-04-30",
+          "price": 344.5,
+          "movingAverage": 371.43
+        },
+        {
+          "date": "1997-05-30",
+          "price": 343.8,
+          "movingAverage": 367.43
+        },
+        {
+          "date": "1997-06-30",
+          "price": 340.8,
+          "movingAverage": 363.72
+        },
+        {
+          "date": "1997-07-31",
+          "price": 324.1,
+          "movingAverage": 358.77
+        },
+        {
+          "date": "1997-08-29",
+          "price": 324.0,
+          "movingAverage": 353.49
+        },
+        {
+          "date": "1997-09-30",
+          "price": 322.8,
+          "movingAverage": 348.46
+        },
+        {
+          "date": "1997-10-31",
+          "price": 324.9,
+          "movingAverage": 343.78
+        },
+        {
+          "date": "1997-11-28",
+          "price": 306.0,
+          "movingAverage": 337.78
+        },
+        {
+          "date": "1997-12-31",
+          "price": 288.7,
+          "movingAverage": 331.09
+        },
+        {
+          "date": "1998-01-30",
+          "price": 289.1,
+          "movingAverage": 325.59
+        },
+        {
+          "date": "1998-02-27",
+          "price": 297.5,
+          "movingAverage": 321.5
+        },
+        {
+          "date": "1998-03-31",
+          "price": 295.9,
+          "movingAverage": 316.84
+        },
+        {
+          "date": "1998-04-30",
+          "price": 308.3,
+          "movingAverage": 313.82
+        },
+        {
+          "date": "1998-05-29",
+          "price": 299.1,
+          "movingAverage": 310.1
+        },
+        {
+          "date": "1998-06-30",
+          "price": 292.3,
+          "movingAverage": 306.06
+        },
+        {
+          "date": "1998-07-31",
+          "price": 292.9,
+          "movingAverage": 303.46
+        },
+        {
+          "date": "1998-08-31",
+          "price": 284.1,
+          "movingAverage": 300.13
+        },
+        {
+          "date": "1998-09-30",
+          "price": 289.0,
+          "movingAverage": 297.32
+        },
+        {
+          "date": "1998-10-30",
+          "price": 295.9,
+          "movingAverage": 294.9
+        },
+        {
+          "date": "1998-11-30",
+          "price": 294.1,
+          "movingAverage": 293.91
+        },
+        {
+          "date": "1998-12-31",
+          "price": 291.7,
+          "movingAverage": 294.16
+        },
+        {
+          "date": "1999-01-29",
+          "price": 287.1,
+          "movingAverage": 293.99
+        },
+        {
+          "date": "1999-02-26",
+          "price": 287.3,
+          "movingAverage": 293.14
+        },
+        {
+          "date": "1999-03-31",
+          "price": 286.0,
+          "movingAverage": 292.32
+        },
+        {
+          "date": "1999-04-30",
+          "price": 282.6,
+          "movingAverage": 290.18
+        },
+        {
+          "date": "1999-05-31",
+          "price": 276.4,
+          "movingAverage": 288.28
+        },
+        {
+          "date": "1999-06-30",
+          "price": 261.3,
+          "movingAverage": 285.7
+        },
+        {
+          "date": "1999-07-30",
+          "price": 256.1,
+          "movingAverage": 282.63
+        },
+        {
+          "date": "1999-08-31",
+          "price": 256.7,
+          "movingAverage": 280.35
+        },
+        {
+          "date": "1999-09-30",
+          "price": 264.7,
+          "movingAverage": 278.32
+        },
+        {
+          "date": "1999-10-29",
+          "price": 310.7,
+          "movingAverage": 279.56
+        },
+        {
+          "date": "1999-11-30",
+          "price": 293.2,
+          "movingAverage": 279.48
+        },
+        {
+          "date": "1999-12-31",
+          "price": 283.1,
+          "movingAverage": 278.77
+        },
+        {
+          "date": "2000-01-31",
+          "price": 284.3,
+          "movingAverage": 278.53
+        },
+        {
+          "date": "2000-02-29",
+          "price": 299.9,
+          "movingAverage": 279.58
+        },
+        {
+          "date": "2000-03-31",
+          "price": 286.4,
+          "movingAverage": 279.62
+        },
+        {
+          "date": "2000-04-28",
+          "price": 279.7,
+          "movingAverage": 279.38
+        },
+        {
+          "date": "2000-05-31",
+          "price": 275.2,
+          "movingAverage": 279.27
+        },
+        {
+          "date": "2000-06-30",
+          "price": 285.7,
+          "movingAverage": 281.31
+        },
+        {
+          "date": "2000-07-31",
+          "price": 281.6,
+          "movingAverage": 283.43
+        },
+        {
+          "date": "2000-08-31",
+          "price": 274.5,
+          "movingAverage": 284.92
+        },
+        {
+          "date": "2000-09-29",
+          "price": 273.7,
+          "movingAverage": 285.67
+        },
+        {
+          "date": "2000-10-31",
+          "price": 270.0,
+          "movingAverage": 282.27
+        },
+        {
+          "date": "2000-11-30",
+          "price": 266.0,
+          "movingAverage": 280.01
+        },
+        {
+          "date": "2000-12-29",
+          "price": 271.5,
+          "movingAverage": 279.04
+        },
+        {
+          "date": "2001-01-31",
+          "price": 265.5,
+          "movingAverage": 277.47
+        },
+        {
+          "date": "2001-02-28",
+          "price": 261.9,
+          "movingAverage": 274.31
+        },
+        {
+          "date": "2001-03-30",
+          "price": 263.0,
+          "movingAverage": 272.36
+        },
+        {
+          "date": "2001-04-30",
+          "price": 260.5,
+          "movingAverage": 270.76
+        },
+        {
+          "date": "2001-05-31",
+          "price": 272.4,
+          "movingAverage": 270.53
+        },
+        {
+          "date": "2001-06-29",
+          "price": 270.2,
+          "movingAverage": 269.23
+        },
+        {
+          "date": "2001-07-31",
+          "price": 267.5,
+          "movingAverage": 268.06
+        },
+        {
+          "date": "2001-08-31",
+          "price": 272.4,
+          "movingAverage": 267.88
+        },
+        {
+          "date": "2001-09-28",
+          "price": 283.4,
+          "movingAverage": 268.69
+        },
+        {
+          "date": "2001-10-31",
+          "price": 283.1,
+          "movingAverage": 269.78
+        },
+        {
+          "date": "2001-11-30",
+          "price": 276.2,
+          "movingAverage": 270.63
+        },
+        {
+          "date": "2001-12-31",
+          "price": 275.9,
+          "movingAverage": 271.0
+        },
+        {
+          "date": "2002-01-31",
+          "price": 281.5,
+          "movingAverage": 272.33
+        },
+        {
+          "date": "2002-02-28",
+          "price": 295.5,
+          "movingAverage": 275.13
+        },
+        {
+          "date": "2002-03-29",
+          "price": 294.1,
+          "movingAverage": 277.72
+        },
+        {
+          "date": "2002-04-30",
+          "price": 302.7,
+          "movingAverage": 281.24
+        },
+        {
+          "date": "2002-05-31",
+          "price": 314.5,
+          "movingAverage": 284.75
+        },
+        {
+          "date": "2002-06-28",
+          "price": 321.2,
+          "movingAverage": 289.0
+        },
+        {
+          "date": "2002-07-31",
+          "price": 313.3,
+          "movingAverage": 292.82
+        },
+        {
+          "date": "2002-08-30",
+          "price": 310.3,
+          "movingAverage": 295.97
+        },
+        {
+          "date": "2002-09-30",
+          "price": 319.1,
+          "movingAverage": 298.95
+        },
+        {
+          "date": "2002-10-31",
+          "price": 316.6,
+          "movingAverage": 301.74
+        },
+        {
+          "date": "2002-11-29",
+          "price": 319.1,
+          "movingAverage": 305.32
+        },
+        {
+          "date": "2002-12-31",
+          "price": 331.9,
+          "movingAverage": 309.98
+        },
+        {
+          "date": "2003-01-31",
+          "price": 356.9,
+          "movingAverage": 316.27
+        },
+        {
+          "date": "2003-02-28",
+          "price": 359.0,
+          "movingAverage": 321.56
+        },
+        {
+          "date": "2003-03-31",
+          "price": 340.6,
+          "movingAverage": 325.43
+        },
+        {
+          "date": "2003-04-30",
+          "price": 328.2,
+          "movingAverage": 327.56
+        },
+        {
+          "date": "2003-05-30",
+          "price": 355.7,
+          "movingAverage": 330.99
+        },
+        {
+          "date": "2003-06-30",
+          "price": 356.4,
+          "movingAverage": 333.93
+        },
+        {
+          "date": "2003-07-31",
+          "price": 351.0,
+          "movingAverage": 337.07
+        },
+        {
+          "date": "2003-08-29",
+          "price": 359.8,
+          "movingAverage": 341.19
+        },
+        {
+          "date": "2003-09-30",
+          "price": 379.0,
+          "movingAverage": 346.18
+        },
+        {
+          "date": "2003-10-31",
+          "price": 378.9,
+          "movingAverage": 351.38
+        },
+        {
+          "date": "2003-11-28",
+          "price": 389.9,
+          "movingAverage": 357.28
+        },
+        {
+          "date": "2003-12-31",
+          "price": 407.0,
+          "movingAverage": 363.53
+        },
+        {
+          "date": "2004-01-30",
+          "price": 413.8,
+          "movingAverage": 368.28
+        },
+        {
+          "date": "2004-02-27",
+          "price": 404.9,
+          "movingAverage": 372.1
+        },
+        {
+          "date": "2004-03-31",
+          "price": 406.7,
+          "movingAverage": 377.61
+        },
+        {
+          "date": "2004-04-30",
+          "price": 403.3,
+          "movingAverage": 383.87
+        },
+        {
+          "date": "2004-05-31",
+          "price": 383.8,
+          "movingAverage": 386.21
+        },
+        {
+          "date": "2004-06-30",
+          "price": 392.4,
+          "movingAverage": 389.21
+        },
+        {
+          "date": "2004-07-30",
+          "price": 398.1,
+          "movingAverage": 393.13
+        },
+        {
+          "date": "2004-08-31",
+          "price": 400.5,
+          "movingAverage": 396.53
+        },
+        {
+          "date": "2004-09-30",
+          "price": 405.3,
+          "movingAverage": 398.72
+        },
+        {
+          "date": "2004-10-29",
+          "price": 420.5,
+          "movingAverage": 402.18
+        },
+        {
+          "date": "2004-11-30",
+          "price": 439.4,
+          "movingAverage": 406.31
+        },
+        {
+          "date": "2004-12-31",
+          "price": 442.1,
+          "movingAverage": 409.23
+        },
+        {
+          "date": "2005-01-31",
+          "price": 424.0,
+          "movingAverage": 410.08
+        },
+        {
+          "date": "2005-02-28",
+          "price": 423.4,
+          "movingAverage": 411.62
+        },
+        {
+          "date": "2005-03-31",
+          "price": 434.3,
+          "movingAverage": 413.93
+        },
+        {
+          "date": "2005-04-29",
+          "price": 429.2,
+          "movingAverage": 416.08
+        },
+        {
+          "date": "2005-05-31",
+          "price": 421.9,
+          "movingAverage": 419.26
+        },
+        {
+          "date": "2005-06-30",
+          "price": 430.7,
+          "movingAverage": 422.45
+        },
+        {
+          "date": "2005-07-29",
+          "price": 424.5,
+          "movingAverage": 424.65
+        },
+        {
+          "date": "2005-08-31",
+          "price": 437.9,
+          "movingAverage": 427.77
+        },
+        {
+          "date": "2005-09-30",
+          "price": 456.1,
+          "movingAverage": 432.0
+        },
+        {
+          "date": "2005-10-31",
+          "price": 469.9,
+          "movingAverage": 436.12
+        },
+        {
+          "date": "2005-11-30",
+          "price": 476.7,
+          "movingAverage": 439.22
+        },
+        {
+          "date": "2005-12-30",
+          "price": 510.1,
+          "movingAverage": 444.89
+        },
+        {
+          "date": "2006-01-31",
+          "price": 549.9,
+          "movingAverage": 455.38
+        },
+        {
+          "date": "2006-02-28",
+          "price": 555.0,
+          "movingAverage": 466.35
+        },
+        {
+          "date": "2006-03-31",
+          "price": 557.1,
+          "movingAverage": 476.58
+        },
+        {
+          "date": "2006-04-28",
+          "price": 610.7,
+          "movingAverage": 491.71
+        },
+        {
+          "date": "2006-05-31",
+          "price": 675.4,
+          "movingAverage": 512.83
+        },
+        {
+          "date": "2006-06-30",
+          "price": 596.2,
+          "movingAverage": 526.62
+        },
+        {
+          "date": "2006-07-31",
+          "price": 633.7,
+          "movingAverage": 544.06
+        },
+        {
+          "date": "2006-08-31",
+          "price": 632.6,
+          "movingAverage": 560.28
+        },
+        {
+          "date": "2006-09-29",
+          "price": 598.2,
+          "movingAverage": 572.12
+        },
+        {
+          "date": "2006-10-31",
+          "price": 585.8,
+          "movingAverage": 581.78
+        },
+        {
+          "date": "2006-11-30",
+          "price": 627.8,
+          "movingAverage": 594.38
+        },
+        {
+          "date": "2006-12-29",
+          "price": 629.8,
+          "movingAverage": 604.35
+        },
+        {
+          "date": "2007-01-31",
+          "price": 631.2,
+          "movingAverage": 611.12
+        },
+        {
+          "date": "2007-02-28",
+          "price": 664.7,
+          "movingAverage": 620.27
+        },
+        {
+          "date": "2007-03-30",
+          "price": 654.9,
+          "movingAverage": 628.42
+        },
+        {
+          "date": "2007-04-30",
+          "price": 679.4,
+          "movingAverage": 634.14
+        },
+        {
+          "date": "2007-05-31",
+          "price": 666.9,
+          "movingAverage": 633.43
+        },
+        {
+          "date": "2007-06-29",
+          "price": 655.5,
+          "movingAverage": 638.38
+        },
+        {
+          "date": "2007-07-31",
+          "price": 665.3,
+          "movingAverage": 641.01
+        },
+        {
+          "date": "2007-08-31",
+          "price": 665.4,
+          "movingAverage": 643.74
+        },
+        {
+          "date": "2007-09-28",
+          "price": 712.7,
+          "movingAverage": 653.28
+        },
+        {
+          "date": "2007-10-31",
+          "price": 754.6,
+          "movingAverage": 667.35
+        },
+        {
+          "date": "2007-11-30",
+          "price": 806.3,
+          "movingAverage": 682.23
+        },
+        {
+          "date": "2007-12-31",
+          "price": 803.2,
+          "movingAverage": 696.68
+        },
+        {
+          "date": "2008-01-31",
+          "price": 889.6,
+          "movingAverage": 718.21
+        },
+        {
+          "date": "2008-02-29",
+          "price": 922.3,
+          "movingAverage": 739.68
+        },
+        {
+          "date": "2008-03-31",
+          "price": 968.4,
+          "movingAverage": 765.8
+        },
+        {
+          "date": "2008-04-30",
+          "price": 909.7,
+          "movingAverage": 784.99
+        },
+        {
+          "date": "2008-05-30",
+          "price": 888.7,
+          "movingAverage": 803.47
+        },
+        {
+          "date": "2008-06-30",
+          "price": 889.5,
+          "movingAverage": 822.97
+        },
+        {
+          "date": "2008-07-31",
+          "price": 939.8,
+          "movingAverage": 845.85
+        },
+        {
+          "date": "2008-08-29",
+          "price": 839.0,
+          "movingAverage": 860.32
+        },
+        {
+          "date": "2008-09-30",
+          "price": 829.9,
+          "movingAverage": 870.08
+        },
+        {
+          "date": "2008-10-31",
+          "price": 806.6,
+          "movingAverage": 874.42
+        },
+        {
+          "date": "2008-11-28",
+          "price": 760.9,
+          "movingAverage": 870.63
+        },
+        {
+          "date": "2008-12-31",
+          "price": 816.1,
+          "movingAverage": 871.71
+        },
+        {
+          "date": "2009-01-30",
+          "price": 858.7,
+          "movingAverage": 869.13
+        },
+        {
+          "date": "2009-02-27",
+          "price": 943.2,
+          "movingAverage": 870.88
+        },
+        {
+          "date": "2009-03-31",
+          "price": 924.3,
+          "movingAverage": 867.2
+        },
+        {
+          "date": "2009-04-30",
+          "price": 890.2,
+          "movingAverage": 865.57
+        },
+        {
+          "date": "2009-05-29",
+          "price": 928.6,
+          "movingAverage": 868.9
+        },
+        {
+          "date": "2009-06-30",
+          "price": 945.7,
+          "movingAverage": 873.58
+        },
+        {
+          "date": "2009-07-31",
+          "price": 934.2,
+          "movingAverage": 873.12
+        },
+        {
+          "date": "2009-08-31",
+          "price": 949.4,
+          "movingAverage": 882.32
+        },
+        {
+          "date": "2009-09-30",
+          "price": 996.6,
+          "movingAverage": 896.21
+        },
+        {
+          "date": "2009-10-30",
+          "price": 1043.2,
+          "movingAverage": 915.93
+        },
+        {
+          "date": "2009-11-30",
+          "price": 1127.0,
+          "movingAverage": 946.43
+        },
+        {
+          "date": "2009-12-31",
+          "price": 1134.7,
+          "movingAverage": 972.98
+        },
+        {
+          "date": "2010-01-29",
+          "price": 1118.0,
+          "movingAverage": 994.59
+        },
+        {
+          "date": "2010-02-26",
+          "price": 1095.4,
+          "movingAverage": 1007.28
+        },
+        {
+          "date": "2010-03-31",
+          "price": 1113.3,
+          "movingAverage": 1023.03
+        },
+        {
+          "date": "2010-04-30",
+          "price": 1148.7,
+          "movingAverage": 1044.57
+        },
+        {
+          "date": "2010-05-31",
+          "price": 1205.4,
+          "movingAverage": 1067.63
+        },
+        {
+          "date": "2010-06-30",
+          "price": 1232.9,
+          "movingAverage": 1091.57
+        },
+        {
+          "date": "2010-07-30",
+          "price": 1193.0,
+          "movingAverage": 1113.13
+        },
+        {
+          "date": "2010-08-31",
+          "price": 1215.8,
+          "movingAverage": 1135.33
+        },
+        {
+          "date": "2010-09-30",
+          "price": 1271.0,
+          "movingAverage": 1158.2
+        },
+        {
+          "date": "2010-10-29",
+          "price": 1342.0,
+          "movingAverage": 1183.1
+        },
+        {
+          "date": "2010-11-30",
+          "price": 1369.9,
+          "movingAverage": 1203.34
+        },
+        {
+          "date": "2010-12-31",
+          "price": 1390.6,
+          "movingAverage": 1224.67
+        },
+        {
+          "date": "2011-01-31",
+          "price": 1356.4,
+          "movingAverage": 1244.53
+        },
+        {
+          "date": "2011-02-28",
+          "price": 1372.7,
+          "movingAverage": 1267.64
+        },
+        {
+          "date": "2011-03-31",
+          "price": 1424.0,
+          "movingAverage": 1293.53
+        },
+        {
+          "date": "2011-04-29",
+          "price": 1473.8,
+          "movingAverage": 1320.62
+        },
+        {
+          "date": "2011-05-31",
+          "price": 1510.4,
+          "movingAverage": 1346.04
+        },
+        {
+          "date": "2011-06-30",
+          "price": 1528.7,
+          "movingAverage": 1370.69
+        },
+        {
+          "date": "2011-07-29",
+          "price": 1572.8,
+          "movingAverage": 1402.34
+        },
+        {
+          "date": "2011-08-31",
+          "price": 1755.8,
+          "movingAverage": 1447.34
+        },
+        {
+          "date": "2011-09-30",
+          "price": 1771.9,
+          "movingAverage": 1489.08
+        },
+        {
+          "date": "2011-10-31",
+          "price": 1665.2,
+          "movingAverage": 1516.02
+        },
+        {
+          "date": "2011-11-30",
+          "price": 1739.0,
+          "movingAverage": 1546.77
+        },
+        {
+          "date": "2011-12-30",
+          "price": 1652.3,
+          "movingAverage": 1568.58
+        },
+        {
+          "date": "2012-01-31",
+          "price": 1656.1,
+          "movingAverage": 1593.56
+        },
+        {
+          "date": "2012-02-29",
+          "price": 1742.6,
+          "movingAverage": 1624.38
+        },
+        {
+          "date": "2012-03-30",
+          "price": 1673.8,
+          "movingAverage": 1645.2
+        },
+        {
+          "date": "2012-04-30",
+          "price": 1650.1,
+          "movingAverage": 1659.89
+        },
+        {
+          "date": "2012-05-31",
+          "price": 1585.5,
+          "movingAverage": 1666.15
+        },
+        {
+          "date": "2012-06-29",
+          "price": 1596.7,
+          "movingAverage": 1671.82
+        },
+        {
+          "date": "2012-07-31",
+          "price": 1593.9,
+          "movingAverage": 1673.58
+        },
+        {
+          "date": "2012-08-31",
+          "price": 1626.0,
+          "movingAverage": 1662.76
+        },
+        {
+          "date": "2012-09-28",
+          "price": 1744.5,
+          "movingAverage": 1660.48
+        },
+        {
+          "date": "2012-10-31",
+          "price": 1747.0,
+          "movingAverage": 1667.29
+        },
+        {
+          "date": "2012-11-30",
+          "price": 1721.1,
+          "movingAverage": 1665.8
+        },
+        {
+          "date": "2012-12-31",
+          "price": 1688.5,
+          "movingAverage": 1668.82
+        },
+        {
+          "date": "2013-01-31",
+          "price": 1671.0,
+          "movingAverage": 1670.06
+        },
+        {
+          "date": "2013-02-28",
+          "price": 1627.6,
+          "movingAverage": 1660.48
+        },
+        {
+          "date": "2013-03-29",
+          "price": 1592.9,
+          "movingAverage": 1653.73
+        },
+        {
+          "date": "2013-04-30",
+          "price": 1485.1,
+          "movingAverage": 1639.98
+        },
+        {
+          "date": "2013-05-31",
+          "price": 1413.5,
+          "movingAverage": 1625.65
+        },
+        {
+          "date": "2013-06-28",
+          "price": 1342.4,
+          "movingAverage": 1604.46
+        },
+        {
+          "date": "2013-07-31",
+          "price": 1286.7,
+          "movingAverage": 1578.86
+        },
+        {
+          "date": "2013-08-30",
+          "price": 1347.1,
+          "movingAverage": 1555.62
+        },
+        {
+          "date": "2013-09-30",
+          "price": 1348.8,
+          "movingAverage": 1522.64
+        },
+        {
+          "date": "2013-10-31",
+          "price": 1316.2,
+          "movingAverage": 1486.74
+        },
+        {
+          "date": "2013-11-29",
+          "price": 1275.8,
+          "movingAverage": 1449.63
+        },
+        {
+          "date": "2013-12-31",
+          "price": 1225.4,
+          "movingAverage": 1411.04
+        },
+        {
+          "date": "2014-01-31",
+          "price": 1244.8,
+          "movingAverage": 1375.52
+        },
+        {
+          "date": "2014-02-28",
+          "price": 1301.0,
+          "movingAverage": 1348.31
+        },
+        {
+          "date": "2014-03-31",
+          "price": 1336.1,
+          "movingAverage": 1326.91
+        },
+        {
+          "date": "2014-04-30",
+          "price": 1299.0,
+          "movingAverage": 1311.4
+        },
+        {
+          "date": "2014-05-30",
+          "price": 1287.5,
+          "movingAverage": 1300.9
+        },
+        {
+          "date": "2014-06-30",
+          "price": 1279.1,
+          "movingAverage": 1295.62
+        },
+        {
+          "date": "2014-07-31",
+          "price": 1311.0,
+          "movingAverage": 1297.65
+        },
+        {
+          "date": "2014-08-29",
+          "price": 1296.0,
+          "movingAverage": 1293.39
+        },
+        {
+          "date": "2014-09-30",
+          "price": 1238.8,
+          "movingAverage": 1284.22
+        },
+        {
+          "date": "2014-10-31",
+          "price": 1222.5,
+          "movingAverage": 1276.42
+        },
+        {
+          "date": "2014-11-28",
+          "price": 1176.3,
+          "movingAverage": 1268.12
+        },
+        {
+          "date": "2014-12-31",
+          "price": 1202.3,
+          "movingAverage": 1266.2
+        },
+        {
+          "date": "2015-01-30",
+          "price": 1251.9,
+          "movingAverage": 1266.79
+        },
+        {
+          "date": "2015-02-27",
+          "price": 1227.2,
+          "movingAverage": 1260.64
+        },
+        {
+          "date": "2015-03-31",
+          "price": 1178.6,
+          "movingAverage": 1247.52
+        },
+        {
+          "date": "2015-04-30",
+          "price": 1197.9,
+          "movingAverage": 1239.09
+        },
+        {
+          "date": "2015-05-29",
+          "price": 1199.1,
+          "movingAverage": 1231.73
+        },
+        {
+          "date": "2015-06-30",
+          "price": 1181.5,
+          "movingAverage": 1223.59
+        },
+        {
+          "date": "2015-07-31",
+          "price": 1130.0,
+          "movingAverage": 1208.51
+        },
+        {
+          "date": "2015-08-31",
+          "price": 1117.5,
+          "movingAverage": 1193.63
+        },
+        {
+          "date": "2015-09-30",
+          "price": 1124.5,
+          "movingAverage": 1184.11
+        },
+        {
+          "date": "2015-10-30",
+          "price": 1159.3,
+          "movingAverage": 1178.84
+        },
+        {
+          "date": "2015-11-30",
+          "price": 1085.7,
+          "movingAverage": 1171.29
+        },
+        {
+          "date": "2015-12-31",
+          "price": 1068.3,
+          "movingAverage": 1160.12
+        },
+        {
+          "date": "2016-01-29",
+          "price": 1097.4,
+          "movingAverage": 1147.25
+        },
+        {
+          "date": "2016-02-29",
+          "price": 1199.9,
+          "movingAverage": 1144.97
+        },
+        {
+          "date": "2016-03-31",
+          "price": 1246.3,
+          "movingAverage": 1150.62
+        },
+        {
+          "date": "2016-04-29",
+          "price": 1242.3,
+          "movingAverage": 1154.32
+        },
+        {
+          "date": "2016-05-31",
+          "price": 1259.4,
+          "movingAverage": 1159.34
+        },
+        {
+          "date": "2016-06-30",
+          "price": 1276.4,
+          "movingAverage": 1167.25
+        },
+        {
+          "date": "2016-07-29",
+          "price": 1337.3,
+          "movingAverage": 1184.52
+        },
+        {
+          "date": "2016-08-31",
+          "price": 1341.1,
+          "movingAverage": 1203.16
+        },
+        {
+          "date": "2016-09-30",
+          "price": 1326.0,
+          "movingAverage": 1219.95
+        },
+        {
+          "date": "2016-10-31",
+          "price": 1266.6,
+          "movingAverage": 1228.89
+        },
+        {
+          "date": "2016-11-30",
+          "price": 1236.0,
+          "movingAverage": 1241.42
+        },
+        {
+          "date": "2016-12-30",
+          "price": 1151.4,
+          "movingAverage": 1248.34
+        },
+        {
+          "date": "2017-01-31",
+          "price": 1192.6,
+          "movingAverage": 1256.27
+        },
+        {
+          "date": "2017-02-28",
+          "price": 1234.4,
+          "movingAverage": 1259.15
+        },
+        {
+          "date": "2017-03-31",
+          "price": 1231.1,
+          "movingAverage": 1257.88
+        },
+        {
+          "date": "2017-04-28",
+          "price": 1265.6,
+          "movingAverage": 1259.83
+        },
+        {
+          "date": "2017-05-31",
+          "price": 1245.0,
+          "movingAverage": 1258.62
+        },
+        {
+          "date": "2017-06-30",
+          "price": 1260.3,
+          "movingAverage": 1257.28
+        },
+        {
+          "date": "2017-07-31",
+          "price": 1236.2,
+          "movingAverage": 1248.86
+        },
+        {
+          "date": "2017-08-31",
+          "price": 1282.3,
+          "movingAverage": 1243.96
+        },
+        {
+          "date": "2017-09-29",
+          "price": 1315.0,
+          "movingAverage": 1243.04
+        },
+        {
+          "date": "2017-10-31",
+          "price": 1279.5,
+          "movingAverage": 1244.12
+        },
+        {
+          "date": "2017-11-30",
+          "price": 1282.3,
+          "movingAverage": 1247.98
+        },
+        {
+          "date": "2017-12-29",
+          "price": 1261.3,
+          "movingAverage": 1257.13
+        },
+        {
+          "date": "2018-01-31",
+          "price": 1331.7,
+          "movingAverage": 1268.73
+        },
+        {
+          "date": "2018-02-28",
+          "price": 1331.5,
+          "movingAverage": 1276.82
+        },
+        {
+          "date": "2018-03-30",
+          "price": 1324.7,
+          "movingAverage": 1284.62
+        },
+        {
+          "date": "2018-04-30",
+          "price": 1334.7,
+          "movingAverage": 1290.38
+        },
+        {
+          "date": "2018-05-31",
+          "price": 1303.0,
+          "movingAverage": 1295.21
+        },
+        {
+          "date": "2018-06-29",
+          "price": 1281.6,
+          "movingAverage": 1296.98
+        },
+        {
+          "date": "2018-07-31",
+          "price": 1238.5,
+          "movingAverage": 1297.17
+        },
+        {
+          "date": "2018-08-31",
+          "price": 1201.3,
+          "movingAverage": 1290.42
+        }
+      ],
+      "yearly": [
+        {
+          "year": 1978,
+          "averagePrice": 207.8
+        },
+        {
+          "year": 1979,
+          "averagePrice": 306.7
+        },
+        {
+          "year": 1980,
+          "averagePrice": 612.57
+        },
+        {
+          "year": 1981,
+          "averagePrice": 459.74
+        },
+        {
+          "year": 1982,
+          "averagePrice": 375.79
+        },
+        {
+          "year": 1983,
+          "averagePrice": 424.18
+        },
+        {
+          "year": 1984,
+          "averagePrice": 360.46
+        },
+        {
+          "year": 1985,
+          "averagePrice": 317.28
+        },
+        {
+          "year": 1986,
+          "averagePrice": 367.51
+        },
+        {
+          "year": 1987,
+          "averagePrice": 446.48
+        },
+        {
+          "year": 1988,
+          "averagePrice": 437.07
+        },
+        {
+          "year": 1989,
+          "averagePrice": 381.44
+        },
+        {
+          "year": 1990,
+          "averagePrice": 383.46
+        },
+        {
+          "year": 1991,
+          "averagePrice": 362.18
+        },
+        {
+          "year": 1992,
+          "averagePrice": 343.72
+        },
+        {
+          "year": 1993,
+          "averagePrice": 359.78
+        },
+        {
+          "year": 1994,
+          "averagePrice": 384.02
+        },
+        {
+          "year": 1995,
+          "averagePrice": 384.16
+        },
+        {
+          "year": 1996,
+          "averagePrice": 387.72
+        },
+        {
+          "year": 1997,
+          "averagePrice": 331.09
+        },
+        {
+          "year": 1998,
+          "averagePrice": 294.16
+        },
+        {
+          "year": 1999,
+          "averagePrice": 278.77
+        },
+        {
+          "year": 2000,
+          "averagePrice": 279.04
+        },
+        {
+          "year": 2001,
+          "averagePrice": 271.0
+        },
+        {
+          "year": 2002,
+          "averagePrice": 309.98
+        },
+        {
+          "year": 2003,
+          "averagePrice": 363.53
+        },
+        {
+          "year": 2004,
+          "averagePrice": 409.23
+        },
+        {
+          "year": 2005,
+          "averagePrice": 444.89
+        },
+        {
+          "year": 2006,
+          "averagePrice": 604.35
+        },
+        {
+          "year": 2007,
+          "averagePrice": 696.68
+        },
+        {
+          "year": 2008,
+          "averagePrice": 871.71
+        },
+        {
+          "year": 2009,
+          "averagePrice": 972.98
+        },
+        {
+          "year": 2010,
+          "averagePrice": 1224.67
+        },
+        {
+          "year": 2011,
+          "averagePrice": 1568.58
+        },
+        {
+          "year": 2012,
+          "averagePrice": 1668.82
+        },
+        {
+          "year": 2013,
+          "averagePrice": 1411.04
+        },
+        {
+          "year": 2014,
+          "averagePrice": 1266.2
+        },
+        {
+          "year": 2015,
+          "averagePrice": 1160.12
+        },
+        {
+          "year": 2016,
+          "averagePrice": 1248.34
+        },
+        {
+          "year": 2017,
+          "averagePrice": 1257.13
+        },
+        {
+          "year": 2018,
+          "averagePrice": 1293.38
+        }
+      ],
+      "monthly": [
+        {
+          "month": 1,
+          "monthName": "Jan",
+          "averagePrice": 627.06,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 2,
+          "monthName": "Feb",
+          "averagePrice": 633.78,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 3,
+          "monthName": "Mar",
+          "averagePrice": 627.71,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 4,
+          "monthName": "Apr",
+          "averagePrice": 626.45,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 5,
+          "monthName": "May",
+          "averagePrice": 626.04,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 6,
+          "monthName": "Jun",
+          "averagePrice": 624.54,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 7,
+          "monthName": "Jul",
+          "averagePrice": 624.95,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 8,
+          "monthName": "Aug",
+          "averagePrice": 631.1,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 9,
+          "monthName": "Sep",
+          "averagePrice": 628.39,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 10,
+          "monthName": "Oct",
+          "averagePrice": 628.11,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 11,
+          "monthName": "Nov",
+          "averagePrice": 626.63,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 12,
+          "monthName": "Dec",
+          "averagePrice": 614.16,
+          "isWeddingSeasonMonth": true
+        }
+      ]
+    },
+    "india": {
+      "historical": [
+        {
+          "date": "2011-01-31",
+          "price": 2024.55
+        },
+        {
+          "date": "2011-02-28",
+          "price": 2043.54
+        },
+        {
+          "date": "2011-03-31",
+          "price": 2088.77
+        },
+        {
+          "date": "2011-04-30",
+          "price": 2150.2
+        },
+        {
+          "date": "2011-05-31",
+          "price": 2214.48
+        },
+        {
+          "date": "2011-06-30",
+          "price": 2243.97,
+          "movingAverage": 2127.58
+        },
+        {
+          "date": "2011-07-31",
+          "price": 2265.81,
+          "movingAverage": 2167.8
+        },
+        {
+          "date": "2011-08-31",
+          "price": 2603.0,
+          "movingAverage": 2261.04
+        },
+        {
+          "date": "2011-09-30",
+          "price": 2741.83,
+          "movingAverage": 2369.88
+        },
+        {
+          "date": "2011-10-31",
+          "price": 2676.52,
+          "movingAverage": 2457.6
+        },
+        {
+          "date": "2011-11-30",
+          "price": 2854.0,
+          "movingAverage": 2564.19
+        },
+        {
+          "date": "2011-12-31",
+          "price": 2819.32,
+          "movingAverage": 2660.08
+        },
+        {
+          "date": "2012-01-31",
+          "price": 2763.58,
+          "movingAverage": 2743.04
+        },
+        {
+          "date": "2012-02-29",
+          "price": 2827.48,
+          "movingAverage": 2780.45
+        },
+        {
+          "date": "2012-03-31",
+          "price": 2794.29,
+          "movingAverage": 2789.2
+        },
+        {
+          "date": "2012-04-30",
+          "price": 2854.37,
+          "movingAverage": 2818.84
+        },
+        {
+          "date": "2012-05-31",
+          "price": 2882.29,
+          "movingAverage": 2823.55
+        },
+        {
+          "date": "2012-06-30",
+          "price": 2989.83,
+          "movingAverage": 2851.97
+        },
+        {
+          "date": "2012-07-31",
+          "price": 2951.0,
+          "movingAverage": 2883.21
+        },
+        {
+          "date": "2012-08-31",
+          "price": 3026.32,
+          "movingAverage": 2916.35
+        },
+        {
+          "date": "2012-09-30",
+          "price": 3164.07,
+          "movingAverage": 2977.98
+        },
+        {
+          "date": "2012-10-31",
+          "price": 3113.06,
+          "movingAverage": 3021.09
+        },
+        {
+          "date": "2012-11-30",
+          "price": 3155.2,
+          "movingAverage": 3066.58
+        },
+        {
+          "date": "2012-12-31",
+          "price": 3104.81,
+          "movingAverage": 3085.74
+        },
+        {
+          "date": "2013-01-31",
+          "price": 3066.9,
+          "movingAverage": 3105.06
+        },
+        {
+          "date": "2013-02-28",
+          "price": 3007.83,
+          "movingAverage": 3101.98
+        },
+        {
+          "date": "2013-03-31",
+          "price": 2954.13,
+          "movingAverage": 3066.99
+        },
+        {
+          "date": "2013-04-30",
+          "price": 2764.13,
+          "movingAverage": 3008.83
+        },
+        {
+          "date": "2013-05-31",
+          "price": 2657.55,
+          "movingAverage": 2925.89
+        },
+        {
+          "date": "2013-06-30",
+          "price": 2715.13,
+          "movingAverage": 2860.95
+        },
+        {
+          "date": "2013-07-31",
+          "price": 2680.1,
+          "movingAverage": 2796.48
+        },
+        {
+          "date": "2013-08-31",
+          "price": 3016.45,
+          "movingAverage": 2797.92
+        },
+        {
+          "date": "2013-09-30",
+          "price": 3084.97,
+          "movingAverage": 2819.72
+        },
+        {
+          "date": "2013-10-31",
+          "price": 2960.65,
+          "movingAverage": 2852.47
+        },
+        {
+          "date": "2013-11-30",
+          "price": 3004.13,
+          "movingAverage": 2910.24
+        },
+        {
+          "date": "2013-12-31",
+          "price": 2902.77,
+          "movingAverage": 2941.51
+        },
+        {
+          "date": "2014-01-31",
+          "price": 2919.39,
+          "movingAverage": 2981.39
+        },
+        {
+          "date": "2014-02-28",
+          "price": 2954.11,
+          "movingAverage": 2971.0
+        },
+        {
+          "date": "2014-03-31",
+          "price": 2978.55,
+          "movingAverage": 2953.27
+        },
+        {
+          "date": "2014-04-30",
+          "price": 2860.77,
+          "movingAverage": 2936.62
+        },
+        {
+          "date": "2014-05-31",
+          "price": 2803.23,
+          "movingAverage": 2903.14
+        },
+        {
+          "date": "2014-06-30",
+          "price": 2692.07,
+          "movingAverage": 2868.02
+        },
+        {
+          "date": "2014-07-31",
+          "price": 2786.65,
+          "movingAverage": 2845.9
+        },
+        {
+          "date": "2014-08-31",
+          "price": 2823.87,
+          "movingAverage": 2824.19
+        },
+        {
+          "date": "2014-09-30",
+          "price": 2699.83,
+          "movingAverage": 2777.74
+        },
+        {
+          "date": "2014-10-31",
+          "price": 2701.71,
+          "movingAverage": 2751.23
+        },
+        {
+          "date": "2014-11-30",
+          "price": 2611.7,
+          "movingAverage": 2719.3
+        },
+        {
+          "date": "2014-12-31",
+          "price": 2682.26,
+          "movingAverage": 2717.67
+        },
+        {
+          "date": "2015-01-31",
+          "price": 2741.45,
+          "movingAverage": 2710.14
+        },
+        {
+          "date": "2015-02-28",
+          "price": 2668.75,
+          "movingAverage": 2684.28
+        },
+        {
+          "date": "2015-03-31",
+          "price": 2616.52,
+          "movingAverage": 2670.4
+        },
+        {
+          "date": "2015-04-30",
+          "price": 2676.2,
+          "movingAverage": 2666.15
+        },
+        {
+          "date": "2015-05-31",
+          "price": 2704.48,
+          "movingAverage": 2681.61
+        },
+        {
+          "date": "2015-06-30",
+          "price": 2679.03,
+          "movingAverage": 2681.07
+        },
+        {
+          "date": "2015-07-31",
+          "price": 2555.26,
+          "movingAverage": 2650.04
+        },
+        {
+          "date": "2015-08-31",
+          "price": 2591.39,
+          "movingAverage": 2637.15
+        },
+        {
+          "date": "2015-09-30",
+          "price": 2637.87,
+          "movingAverage": 2640.7
+        },
+        {
+          "date": "2015-10-31",
+          "price": 2669.61,
+          "movingAverage": 2639.61
+        },
+        {
+          "date": "2015-11-30",
+          "price": 2546.93,
+          "movingAverage": 2613.35
+        },
+        {
+          "date": "2015-12-31",
+          "price": 2528.84,
+          "movingAverage": 2588.32
+        },
+        {
+          "date": "2016-01-31",
+          "price": 2599.26,
+          "movingAverage": 2595.65
+        },
+        {
+          "date": "2016-02-29",
+          "price": 2867.1,
+          "movingAverage": 2641.6
+        },
+        {
+          "date": "2016-03-31",
+          "price": 2916.23,
+          "movingAverage": 2688.0
+        },
+        {
+          "date": "2016-04-30",
+          "price": 2906.57,
+          "movingAverage": 2727.49
+        },
+        {
+          "date": "2016-05-31",
+          "price": 2967.58,
+          "movingAverage": 2797.6
+        },
+        {
+          "date": "2016-06-30",
+          "price": 3027.4,
+          "movingAverage": 2880.69
+        },
+        {
+          "date": "2016-07-31",
+          "price": 3126.29,
+          "movingAverage": 2968.53
+        },
+        {
+          "date": "2016-08-31",
+          "price": 3126.48,
+          "movingAverage": 3011.76
+        },
+        {
+          "date": "2016-09-30",
+          "price": 3107.13,
+          "movingAverage": 3043.58
+        },
+        {
+          "date": "2016-10-31",
+          "price": 2990.39,
+          "movingAverage": 3057.55
+        },
+        {
+          "date": "2016-11-30",
+          "price": 2944.63,
+          "movingAverage": 3053.72
+        },
+        {
+          "date": "2016-12-31",
+          "price": 2749.13,
+          "movingAverage": 3007.34
+        },
+        {
+          "date": "2017-01-31",
+          "price": 2827.94,
+          "movingAverage": 2957.62
+        },
+        {
+          "date": "2017-02-28",
+          "price": 2924.68,
+          "movingAverage": 2923.98
+        },
+        {
+          "date": "2017-03-31",
+          "price": 2867.58,
+          "movingAverage": 2884.06
+        },
+        {
+          "date": "2017-04-30",
+          "price": 2901.97,
+          "movingAverage": 2869.32
+        },
+        {
+          "date": "2017-05-31",
+          "price": 2844.94,
+          "movingAverage": 2852.71
+        },
+        {
+          "date": "2017-06-30",
+          "price": 2881.17,
+          "movingAverage": 2874.71
+        },
+        {
+          "date": "2017-07-31",
+          "price": 2820.81,
+          "movingAverage": 2873.53
+        },
+        {
+          "date": "2017-08-31",
+          "price": 2900.35,
+          "movingAverage": 2869.47
+        },
+        {
+          "date": "2017-09-30",
+          "price": 2986.13,
+          "movingAverage": 2889.23
+        },
+        {
+          "date": "2017-10-31",
+          "price": 2954.87,
+          "movingAverage": 2898.05
+        },
+        {
+          "date": "2017-11-30",
+          "price": 2942.23,
+          "movingAverage": 2914.26
+        },
+        {
+          "date": "2017-12-31",
+          "price": 2868.58,
+          "movingAverage": 2912.16
+        },
+        {
+          "date": "2018-01-31",
+          "price": 2966.71,
+          "movingAverage": 2936.48
+        },
+        {
+          "date": "2018-02-28",
+          "price": 3039.43,
+          "movingAverage": 2959.66
+        },
+        {
+          "date": "2018-03-31",
+          "price": 3046.71,
+          "movingAverage": 2969.75
+        },
+        {
+          "date": "2018-04-30",
+          "price": 3108.67,
+          "movingAverage": 2995.39
+        },
+        {
+          "date": "2018-05-31",
+          "price": 3117.32,
+          "movingAverage": 3024.57
+        },
+        {
+          "date": "2018-06-30",
+          "price": 3083.03,
+          "movingAverage": 3060.31
+        },
+        {
+          "date": "2018-07-31",
+          "price": 3011.03,
+          "movingAverage": 3067.7
+        },
+        {
+          "date": "2018-08-31",
+          "price": 2968.58,
+          "movingAverage": 3055.89
+        },
+        {
+          "date": "2018-09-30",
+          "price": 3053.37,
+          "movingAverage": 3057.0
+        },
+        {
+          "date": "2018-10-31",
+          "price": 3166.13,
+          "movingAverage": 3066.58
+        },
+        {
+          "date": "2018-11-30",
+          "price": 3130.25,
+          "movingAverage": 3068.73
+        }
+      ],
+      "yearly": [
+        {
+          "year": 2011,
+          "averagePrice": 2393.83
+        },
+        {
+          "year": 2012,
+          "averagePrice": 2968.86
+        },
+        {
+          "year": 2013,
+          "averagePrice": 2901.23
+        },
+        {
+          "year": 2014,
+          "averagePrice": 2792.84
+        },
+        {
+          "year": 2015,
+          "averagePrice": 2634.69
+        },
+        {
+          "year": 2016,
+          "averagePrice": 2944.02
+        },
+        {
+          "year": 2017,
+          "averagePrice": 2893.44
+        },
+        {
+          "year": 2018,
+          "averagePrice": 3062.84
+        }
+      ],
+      "monthly": [
+        {
+          "month": 1,
+          "monthName": "Jan",
+          "averagePrice": 2738.72,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 2,
+          "monthName": "Feb",
+          "averagePrice": 2791.62,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 3,
+          "monthName": "Mar",
+          "averagePrice": 2782.85,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 4,
+          "monthName": "Apr",
+          "averagePrice": 2777.86,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 5,
+          "monthName": "May",
+          "averagePrice": 2773.98,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 6,
+          "monthName": "Jun",
+          "averagePrice": 2788.95,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 7,
+          "monthName": "Jul",
+          "averagePrice": 2774.62,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 8,
+          "monthName": "Aug",
+          "averagePrice": 2882.06,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 9,
+          "monthName": "Sep",
+          "averagePrice": 2934.4,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 10,
+          "monthName": "Oct",
+          "averagePrice": 2904.12,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 11,
+          "monthName": "Nov",
+          "averagePrice": 2898.63,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 12,
+          "monthName": "Dec",
+          "averagePrice": 2807.96,
+          "isWeddingSeasonMonth": true
+        }
+      ]
+    }
+  },
+  "seasonality": {
+    "global": {
+      "monthly": [
+        {
+          "month": 1,
+          "monthName": "Jan",
+          "averagePrice": 627.06,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 2,
+          "monthName": "Feb",
+          "averagePrice": 633.78,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 3,
+          "monthName": "Mar",
+          "averagePrice": 627.71,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 4,
+          "monthName": "Apr",
+          "averagePrice": 626.45,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 5,
+          "monthName": "May",
+          "averagePrice": 626.04,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 6,
+          "monthName": "Jun",
+          "averagePrice": 624.54,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 7,
+          "monthName": "Jul",
+          "averagePrice": 624.95,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 8,
+          "monthName": "Aug",
+          "averagePrice": 631.1,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 9,
+          "monthName": "Sep",
+          "averagePrice": 628.39,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 10,
+          "monthName": "Oct",
+          "averagePrice": 628.11,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 11,
+          "monthName": "Nov",
+          "averagePrice": 626.63,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 12,
+          "monthName": "Dec",
+          "averagePrice": 614.16,
+          "isWeddingSeasonMonth": true
+        }
+      ],
+      "weddingSeason": null
+    },
+    "india": {
+      "monthly": [
+        {
+          "month": 1,
+          "monthName": "Jan",
+          "averagePrice": 2738.72,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 2,
+          "monthName": "Feb",
+          "averagePrice": 2791.62,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 3,
+          "monthName": "Mar",
+          "averagePrice": 2782.85,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 4,
+          "monthName": "Apr",
+          "averagePrice": 2777.86,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 5,
+          "monthName": "May",
+          "averagePrice": 2773.98,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 6,
+          "monthName": "Jun",
+          "averagePrice": 2788.95,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 7,
+          "monthName": "Jul",
+          "averagePrice": 2774.62,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 8,
+          "monthName": "Aug",
+          "averagePrice": 2882.06,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 9,
+          "monthName": "Sep",
+          "averagePrice": 2934.4,
+          "isWeddingSeasonMonth": false
+        },
+        {
+          "month": 10,
+          "monthName": "Oct",
+          "averagePrice": 2904.12,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 11,
+          "monthName": "Nov",
+          "averagePrice": 2898.63,
+          "isWeddingSeasonMonth": true
+        },
+        {
+          "month": 12,
+          "monthName": "Dec",
+          "averagePrice": 2807.96,
+          "isWeddingSeasonMonth": true
+        }
+      ],
+      "weddingSeason": {
+        "wedding_season_avg": 2834.28,
+        "other_months_avg": 2812.05,
+        "difference_pct": 0.79,
+        "top_3_months_overall": [
+          9,
+          10,
+          11
+        ],
+        "wedding_months_in_top_3": [
+          10,
+          11
+        ],
+        "weddingSeasonMonths": [
+          3,
+          4,
+          10,
+          11,
+          12
+        ],
+        "conclusion": "The difference between wedding-season months and other months is small. The evidence for a strong wedding-season effect in this dataset is weak/inconclusive.",
+        "caveat": "Presented as an observed seasonal pattern only. This does not claim that wedding season causes gold price changes."
+      }
+    }
+  },
+  "stationarity": {
+    "global": {
+      "logNeeded": false,
+      "seriesUsed": "original_price",
+      "differencingOrder": 1,
+      "rawHistory": [
+        {
+          "label": "raw price, d=0",
+          "d": 0,
+          "adfStatistic": -0.8617716999195358,
+          "pValue": 0.8003008158871685,
+          "isStationary": false,
+          "criticalValues": {
+            "1%": -3.444310291143469,
+            "5%": -2.867695986993458,
+            "10%": -2.5700489042602586
+          }
+        },
+        {
+          "label": "raw price, d=1",
+          "d": 1,
+          "adfStatistic": -8.054590589036346,
+          "pValue": 1.7059604565407063e-12,
+          "isStationary": true,
+          "criticalValues": {
+            "1%": -3.444310291143469,
+            "5%": -2.867695986993458,
+            "10%": -2.5700489042602586
+          }
+        }
+      ],
+      "logHistory": [
+        {
+          "label": "log price, d=0",
+          "d": 0,
+          "adfStatistic": -0.8292739882156086,
+          "pValue": 0.8103714750021598,
+          "isStationary": false,
+          "criticalValues": {
+            "1%": -3.4442214494657586,
+            "5%": -2.8676569002144148,
+            "10%": -2.5700280720682227
+          }
+        },
+        {
+          "label": "log price, d=1",
+          "d": 1,
+          "adfStatistic": -16.054754943419645,
+          "pValue": 5.723389890078091e-29,
+          "isStationary": true,
+          "criticalValues": {
+            "1%": -3.4442214494657586,
+            "5%": -2.8676569002144148,
+            "10%": -2.5700280720682227
+          }
+        }
+      ],
+      "acf": [
+        {
+          "lag": 0,
+          "value": 1.0
+        },
+        {
+          "lag": 1,
+          "value": 0.1887
+        },
+        {
+          "lag": 2,
+          "value": -0.0618
+        },
+        {
+          "lag": 3,
+          "value": 0.0019
+        },
+        {
+          "lag": 4,
+          "value": 0.0036
+        },
+        {
+          "lag": 5,
+          "value": 0.1411
+        },
+        {
+          "lag": 6,
+          "value": 0.0547
+        },
+        {
+          "lag": 7,
+          "value": 0.0021
+        },
+        {
+          "lag": 8,
+          "value": -0.0447
+        },
+        {
+          "lag": 9,
+          "value": -0.0335
+        },
+        {
+          "lag": 10,
+          "value": 0.0125
+        },
+        {
+          "lag": 11,
+          "value": 0.1344
+        },
+        {
+          "lag": 12,
+          "value": 0.0486
+        },
+        {
+          "lag": 13,
+          "value": -0.0138
+        },
+        {
+          "lag": 14,
+          "value": 0.0211
+        },
+        {
+          "lag": 15,
+          "value": 0.0393
+        },
+        {
+          "lag": 16,
+          "value": 0.0674
+        },
+        {
+          "lag": 17,
+          "value": 0.0071
+        },
+        {
+          "lag": 18,
+          "value": -0.0041
+        },
+        {
+          "lag": 19,
+          "value": -0.0254
+        },
+        {
+          "lag": 20,
+          "value": 0.0249
+        },
+        {
+          "lag": 21,
+          "value": 0.0024
+        },
+        {
+          "lag": 22,
+          "value": 0.0043
+        },
+        {
+          "lag": 23,
+          "value": 0.0006
+        },
+        {
+          "lag": 24,
+          "value": 0.0165
+        }
+      ],
+      "pacf": [
+        {
+          "lag": 0,
+          "value": 1.0
+        },
+        {
+          "lag": 1,
+          "value": 0.1887
+        },
+        {
+          "lag": 2,
+          "value": -0.101
+        },
+        {
+          "lag": 3,
+          "value": 0.0354
+        },
+        {
+          "lag": 4,
+          "value": -0.0107
+        },
+        {
+          "lag": 5,
+          "value": 0.152
+        },
+        {
+          "lag": 6,
+          "value": -0.0068
+        },
+        {
+          "lag": 7,
+          "value": 0.0186
+        },
+        {
+          "lag": 8,
+          "value": -0.0546
+        },
+        {
+          "lag": 9,
+          "value": -0.0095
+        },
+        {
+          "lag": 10,
+          "value": -0.0075
+        },
+        {
+          "lag": 11,
+          "value": 0.135
+        },
+        {
+          "lag": 12,
+          "value": -0.0105
+        },
+        {
+          "lag": 13,
+          "value": 0.0149
+        },
+        {
+          "lag": 14,
+          "value": 0.0252
+        },
+        {
+          "lag": 15,
+          "value": 0.0386
+        },
+        {
+          "lag": 16,
+          "value": 0.0203
+        },
+        {
+          "lag": 17,
+          "value": -0.0192
+        },
+        {
+          "lag": 18,
+          "value": 0.0026
+        },
+        {
+          "lag": 19,
+          "value": -0.0266
+        },
+        {
+          "lag": 20,
+          "value": 0.0383
+        },
+        {
+          "lag": 21,
+          "value": -0.03
+        },
+        {
+          "lag": 22,
+          "value": 0.0058
+        },
+        {
+          "lag": 23,
+          "value": -0.0116
+        },
+        {
+          "lag": 24,
+          "value": 0.0408
+        }
+      ],
+      "explanation": "Stationarity indicates whether the statistical behavior of the series remains relatively stable over time."
+    },
+    "india": {
+      "logNeeded": false,
+      "seriesUsed": "original_price",
+      "differencingOrder": 0,
+      "rawHistory": [
+        {
+          "label": "raw price, d=0",
+          "d": 0,
+          "adfStatistic": -3.357408702605503,
+          "pValue": 0.012499380894837184,
+          "isStationary": true,
+          "criticalValues": {
+            "1%": -3.502704609582561,
+            "5%": -2.8931578098779522,
+            "10%": -2.583636712914788
+          }
+        }
+      ],
+      "logHistory": [
+        {
+          "label": "log price, d=0",
+          "d": 0,
+          "adfStatistic": -3.419963249958826,
+          "pValue": 0.010296862015898512,
+          "isStationary": true,
+          "criticalValues": {
+            "1%": -3.5019123847798657,
+            "5%": -2.892815255482889,
+            "10%": -2.583453861475781
+          }
+        }
+      ],
+      "acf": [
+        {
+          "lag": 0,
+          "value": 1.0
+        },
+        {
+          "lag": 1,
+          "value": 0.8713
+        },
+        {
+          "lag": 2,
+          "value": 0.7287
+        },
+        {
+          "lag": 3,
+          "value": 0.602
+        },
+        {
+          "lag": 4,
+          "value": 0.4841
+        },
+        {
+          "lag": 5,
+          "value": 0.3852
+        },
+        {
+          "lag": 6,
+          "value": 0.2678
+        },
+        {
+          "lag": 7,
+          "value": 0.149
+        },
+        {
+          "lag": 8,
+          "value": 0.0828
+        },
+        {
+          "lag": 9,
+          "value": 0.0552
+        },
+        {
+          "lag": 10,
+          "value": 0.0125
+        },
+        {
+          "lag": 11,
+          "value": 0.0128
+        },
+        {
+          "lag": 12,
+          "value": 0.0084
+        },
+        {
+          "lag": 13,
+          "value": -0.0289
+        },
+        {
+          "lag": 14,
+          "value": -0.0684
+        },
+        {
+          "lag": 15,
+          "value": -0.1288
+        },
+        {
+          "lag": 16,
+          "value": -0.1669
+        },
+        {
+          "lag": 17,
+          "value": -0.1976
+        },
+        {
+          "lag": 18,
+          "value": -0.2081
+        },
+        {
+          "lag": 19,
+          "value": -0.222
+        },
+        {
+          "lag": 20,
+          "value": -0.2327
+        },
+        {
+          "lag": 21,
+          "value": -0.2033
+        },
+        {
+          "lag": 22,
+          "value": -0.1827
+        },
+        {
+          "lag": 23,
+          "value": -0.1344
+        },
+        {
+          "lag": 24,
+          "value": -0.0879
+        }
+      ],
+      "pacf": [
+        {
+          "lag": 0,
+          "value": 1.0
+        },
+        {
+          "lag": 1,
+          "value": 0.8713
+        },
+        {
+          "lag": 2,
+          "value": -0.1268
+        },
+        {
+          "lag": 3,
+          "value": -0.0125
+        },
+        {
+          "lag": 4,
+          "value": -0.0495
+        },
+        {
+          "lag": 5,
+          "value": 0.001
+        },
+        {
+          "lag": 6,
+          "value": -0.1575
+        },
+        {
+          "lag": 7,
+          "value": -0.0801
+        },
+        {
+          "lag": 8,
+          "value": 0.1213
+        },
+        {
+          "lag": 9,
+          "value": 0.0737
+        },
+        {
+          "lag": 10,
+          "value": -0.1259
+        },
+        {
+          "lag": 11,
+          "value": 0.1665
+        },
+        {
+          "lag": 12,
+          "value": -0.0464
+        },
+        {
+          "lag": 13,
+          "value": -0.1851
+        },
+        {
+          "lag": 14,
+          "value": -0.0779
+        },
+        {
+          "lag": 15,
+          "value": -0.0847
+        },
+        {
+          "lag": 16,
+          "value": 0.0428
+        },
+        {
+          "lag": 17,
+          "value": -0.0833
+        },
+        {
+          "lag": 18,
+          "value": 0.1234
+        },
+        {
+          "lag": 19,
+          "value": -0.0107
+        },
+        {
+          "lag": 20,
+          "value": -0.0922
+        },
+        {
+          "lag": 21,
+          "value": 0.1353
+        },
+        {
+          "lag": 22,
+          "value": -0.0953
+        },
+        {
+          "lag": 23,
+          "value": 0.0708
+        },
+        {
+          "lag": 24,
+          "value": 0.0034
+        }
+      ],
+      "explanation": "Stationarity indicates whether the statistical behavior of the series remains relatively stable over time."
+    }
+  },
+  "models": {
+    "global": {
+      "winner": "Multiple Regression",
+      "regression": {
+        "name": "Multiple Regression",
+        "r2": 0.9225921312458472,
+        "rmse": 52.14145849976867,
+        "features": [
+          "lag_1",
+          "lag_2",
+          "ma_3",
+          "ma_12"
+        ],
+        "explanation": "Predicts the current month using lagged prices and moving averages from prior months only. Evaluated with a chronological train/test split.",
+        "actualVsPredicted": [
+          {
+            "date": "2010-12-31",
+            "actual": 1390.6,
+            "predicted": 1381.27
+          },
+          {
+            "date": "2011-01-31",
+            "actual": 1356.4,
+            "predicted": 1410.05
+          },
+          {
+            "date": "2011-02-28",
+            "actual": 1372.7,
+            "predicted": 1366.41
+          },
+          {
+            "date": "2011-03-31",
+            "actual": 1424.0,
+            "predicted": 1402.39
+          },
+          {
+            "date": "2011-04-29",
+            "actual": 1473.8,
+            "predicted": 1450.43
+          },
+          {
+            "date": "2011-05-31",
+            "actual": 1510.4,
+            "predicted": 1494.13
+          },
+          {
+            "date": "2011-06-30",
+            "actual": 1528.7,
+            "predicted": 1529.78
+          },
+          {
+            "date": "2011-07-29",
+            "actual": 1572.8,
+            "predicted": 1547.96
+          },
+          {
+            "date": "2011-08-31",
+            "actual": 1755.8,
+            "predicted": 1601.1
+          },
+          {
+            "date": "2011-09-30",
+            "actual": 1771.9,
+            "predicted": 1808.0
+          },
+          {
+            "date": "2011-10-31",
+            "actual": 1665.2,
+            "predicted": 1767.69
+          },
+          {
+            "date": "2011-11-30",
+            "actual": 1739.0,
+            "predicted": 1670.3
+          },
+          {
+            "date": "2011-12-30",
+            "actual": 1652.3,
+            "predicted": 1801.3
+          },
+          {
+            "date": "2012-01-31",
+            "actual": 1656.1,
+            "predicted": 1646.73
+          },
+          {
+            "date": "2012-02-29",
+            "actual": 1742.6,
+            "predicted": 1698.05
+          },
+          {
+            "date": "2012-03-30",
+            "actual": 1673.8,
+            "predicted": 1782.13
+          },
+          {
+            "date": "2012-04-30",
+            "actual": 1650.1,
+            "predicted": 1667.38
+          },
+          {
+            "date": "2012-05-31",
+            "actual": 1585.5,
+            "predicted": 1681.82
+          },
+          {
+            "date": "2012-06-29",
+            "actual": 1596.7,
+            "predicted": 1598.27
+          },
+          {
+            "date": "2012-07-31",
+            "actual": 1593.9,
+            "predicted": 1630.63
+          },
+          {
+            "date": "2012-08-31",
+            "actual": 1626.0,
+            "predicted": 1609.66
+          },
+          {
+            "date": "2012-09-28",
+            "actual": 1744.5,
+            "predicted": 1652.01
+          },
+          {
+            "date": "2012-10-31",
+            "actual": 1747.0,
+            "predicted": 1782.49
+          },
+          {
+            "date": "2012-11-30",
+            "actual": 1721.1,
+            "predicted": 1748.1
+          },
+          {
+            "date": "2012-12-31",
+            "actual": 1688.5,
+            "predicted": 1740.56
+          },
+          {
+            "date": "2013-01-31",
+            "actual": 1671.0,
+            "predicted": 1711.28
+          },
+          {
+            "date": "2013-02-28",
+            "actual": 1627.6,
+            "predicted": 1696.85
+          },
+          {
+            "date": "2013-03-29",
+            "actual": 1592.9,
+            "predicted": 1644.5
+          },
+          {
+            "date": "2013-04-30",
+            "actual": 1485.1,
+            "predicted": 1615.28
+          },
+          {
+            "date": "2013-05-31",
+            "actual": 1413.5,
+            "predicted": 1489.52
+          },
+          {
+            "date": "2013-06-28",
+            "actual": 1342.4,
+            "predicted": 1436.29
+          },
+          {
+            "date": "2013-07-31",
+            "actual": 1286.7,
+            "predicted": 1355.29
+          },
+          {
+            "date": "2013-08-30",
+            "actual": 1347.1,
+            "predicted": 1300.29
+          },
+          {
+            "date": "2013-09-30",
+            "actual": 1348.8,
+            "predicted": 1379.62
+          },
+          {
+            "date": "2013-10-31",
+            "actual": 1316.2,
+            "predicted": 1348.64
+          },
+          {
+            "date": "2013-11-29",
+            "actual": 1275.8,
+            "predicted": 1322.19
+          },
+          {
+            "date": "2013-12-31",
+            "actual": 1225.4,
+            "predicted": 1286.9
+          },
+          {
+            "date": "2014-01-31",
+            "actual": 1244.8,
+            "predicted": 1235.36
+          },
+          {
+            "date": "2014-02-28",
+            "actual": 1301.0,
+            "predicted": 1269.99
+          },
+          {
+            "date": "2014-03-31",
+            "actual": 1336.1,
+            "predicted": 1320.84
+          },
+          {
+            "date": "2014-04-30",
+            "actual": 1299.0,
+            "predicted": 1346.95
+          },
+          {
+            "date": "2014-05-30",
+            "actual": 1287.5,
+            "predicted": 1301.3
+          },
+          {
+            "date": "2014-06-30",
+            "actual": 1279.1,
+            "predicted": 1308.73
+          },
+          {
+            "date": "2014-07-31",
+            "actual": 1311.0,
+            "predicted": 1295.3
+          },
+          {
+            "date": "2014-08-29",
+            "actual": 1296.0,
+            "predicted": 1334.44
+          },
+          {
+            "date": "2014-09-30",
+            "actual": 1238.8,
+            "predicted": 1302.91
+          },
+          {
+            "date": "2014-10-31",
+            "actual": 1222.5,
+            "predicted": 1246.36
+          },
+          {
+            "date": "2014-11-28",
+            "actual": 1176.3,
+            "predicted": 1244.98
+          },
+          {
+            "date": "2014-12-31",
+            "actual": 1202.3,
+            "predicted": 1183.68
+          },
+          {
+            "date": "2015-01-30",
+            "actual": 1251.9,
+            "predicted": 1228.8
+          },
+          {
+            "date": "2015-02-27",
+            "actual": 1227.2,
+            "predicted": 1269.38
+          },
+          {
+            "date": "2015-03-31",
+            "actual": 1178.6,
+            "predicted": 1226.8
+          },
+          {
+            "date": "2015-04-30",
+            "actual": 1197.9,
+            "predicted": 1187.98
+          },
+          {
+            "date": "2015-05-29",
+            "actual": 1199.1,
+            "predicted": 1224.35
+          },
+          {
+            "date": "2015-06-30",
+            "actual": 1181.5,
+            "predicted": 1208.77
+          },
+          {
+            "date": "2015-07-31",
+            "actual": 1130.0,
+            "predicted": 1191.32
+          },
+          {
+            "date": "2015-08-31",
+            "actual": 1117.5,
+            "predicted": 1136.4
+          },
+          {
+            "date": "2015-09-30",
+            "actual": 1124.5,
+            "predicted": 1137.14
+          },
+          {
+            "date": "2015-10-30",
+            "actual": 1159.3,
+            "predicted": 1139.79
+          },
+          {
+            "date": "2015-11-30",
+            "actual": 1085.7,
+            "predicted": 1176.7
+          },
+          {
+            "date": "2015-12-31",
+            "actual": 1068.3,
+            "predicted": 1076.73
+          },
+          {
+            "date": "2016-01-29",
+            "actual": 1097.4,
+            "predicted": 1090.52
+          },
+          {
+            "date": "2016-02-29",
+            "actual": 1199.9,
+            "predicted": 1117.13
+          },
+          {
+            "date": "2016-03-31",
+            "actual": 1246.3,
+            "predicted": 1226.39
+          },
+          {
+            "date": "2016-04-29",
+            "actual": 1242.3,
+            "predicted": 1250.27
+          },
+          {
+            "date": "2016-05-31",
+            "actual": 1259.4,
+            "predicted": 1249.43
+          },
+          {
+            "date": "2016-06-30",
+            "actual": 1276.4,
+            "predicted": 1281.01
+          },
+          {
+            "date": "2016-07-29",
+            "actual": 1337.3,
+            "predicted": 1294.14
+          },
+          {
+            "date": "2016-08-31",
+            "actual": 1341.1,
+            "predicted": 1364.35
+          },
+          {
+            "date": "2016-09-30",
+            "actual": 1326.0,
+            "predicted": 1349.41
+          },
+          {
+            "date": "2016-10-31",
+            "actual": 1266.6,
+            "predicted": 1341.98
+          },
+          {
+            "date": "2016-11-30",
+            "actual": 1236.0,
+            "predicted": 1276.5
+          },
+          {
+            "date": "2016-12-30",
+            "actual": 1151.4,
+            "predicted": 1258.13
+          },
+          {
+            "date": "2017-01-31",
+            "actual": 1192.6,
+            "predicted": 1154.95
+          },
+          {
+            "date": "2017-02-28",
+            "actual": 1234.4,
+            "predicted": 1229.39
+          },
+          {
+            "date": "2017-03-31",
+            "actual": 1231.1,
+            "predicted": 1246.92
+          },
+          {
+            "date": "2017-04-28",
+            "actual": 1265.6,
+            "predicted": 1236.04
+          },
+          {
+            "date": "2017-05-31",
+            "actual": 1245.0,
+            "predicted": 1287.47
+          },
+          {
+            "date": "2017-06-30",
+            "actual": 1260.3,
+            "predicted": 1249.21
+          },
+          {
+            "date": "2017-07-31",
+            "actual": 1236.2,
+            "predicted": 1282.47
+          },
+          {
+            "date": "2017-08-31",
+            "actual": 1282.3,
+            "predicted": 1243.71
+          },
+          {
+            "date": "2017-09-29",
+            "actual": 1315.0,
+            "predicted": 1311.52
+          },
+          {
+            "date": "2017-10-31",
+            "actual": 1279.5,
+            "predicted": 1328.9
+          },
+          {
+            "date": "2017-11-30",
+            "actual": 1282.3,
+            "predicted": 1283.52
+          },
+          {
+            "date": "2017-12-29",
+            "actual": 1261.3,
+            "predicted": 1306.72
+          },
+          {
+            "date": "2018-01-31",
+            "actual": 1331.7,
+            "predicted": 1272.76
+          },
+          {
+            "date": "2018-02-28",
+            "actual": 1331.5,
+            "predicted": 1365.68
+          },
+          {
+            "date": "2018-03-30",
+            "actual": 1324.7,
+            "predicted": 1334.81
+          },
+          {
+            "date": "2018-04-30",
+            "actual": 1334.7,
+            "predicted": 1341.07
+          },
+          {
+            "date": "2018-05-31",
+            "actual": 1303.0,
+            "predicted": 1355.45
+          },
+          {
+            "date": "2018-06-29",
+            "actual": 1281.6,
+            "predicted": 1311.99
+          },
+          {
+            "date": "2018-07-31",
+            "actual": 1238.5,
+            "predicted": 1299.95
+          },
+          {
+            "date": "2018-08-31",
+            "actual": 1201.3,
+            "predicted": 1249.33
+          }
+        ]
+      },
+      "sarima": {
+        "name": "SARIMA (ARIMA(1,1,1))",
+        "label": "ARIMA(1,1,1)",
+        "order": [
+          1,
+          1,
+          1
+        ],
+        "seasonalOrder": [
+          0,
+          0,
+          0,
+          12
+        ],
+        "r2": -0.0018702353101625047,
+        "rmse": 187.5842438813888,
+        "explanation": "Seasonal ARIMA candidate selected by lowest test RMSE. Produces a multi-step forecast over the same test date range as regression.",
+        "actualVsPredicted": [
+          {
+            "date": "2010-12-31",
+            "actual": 1390.6,
+            "predicted": 1370.6
+          },
+          {
+            "date": "2011-01-31",
+            "actual": 1356.4,
+            "predicted": 1370.45
+          },
+          {
+            "date": "2011-02-28",
+            "actual": 1372.7,
+            "predicted": 1370.49
+          },
+          {
+            "date": "2011-03-31",
+            "actual": 1424.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2011-04-29",
+            "actual": 1473.8,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2011-05-31",
+            "actual": 1510.4,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2011-06-30",
+            "actual": 1528.7,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2011-07-29",
+            "actual": 1572.8,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2011-08-31",
+            "actual": 1755.8,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2011-09-30",
+            "actual": 1771.9,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2011-10-31",
+            "actual": 1665.2,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2011-11-30",
+            "actual": 1739.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2011-12-30",
+            "actual": 1652.3,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2012-01-31",
+            "actual": 1656.1,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2012-02-29",
+            "actual": 1742.6,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2012-03-30",
+            "actual": 1673.8,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2012-04-30",
+            "actual": 1650.1,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2012-05-31",
+            "actual": 1585.5,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2012-06-29",
+            "actual": 1596.7,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2012-07-31",
+            "actual": 1593.9,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2012-08-31",
+            "actual": 1626.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2012-09-28",
+            "actual": 1744.5,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2012-10-31",
+            "actual": 1747.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2012-11-30",
+            "actual": 1721.1,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2012-12-31",
+            "actual": 1688.5,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2013-01-31",
+            "actual": 1671.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2013-02-28",
+            "actual": 1627.6,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2013-03-29",
+            "actual": 1592.9,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2013-04-30",
+            "actual": 1485.1,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2013-05-31",
+            "actual": 1413.5,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2013-06-28",
+            "actual": 1342.4,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2013-07-31",
+            "actual": 1286.7,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2013-08-30",
+            "actual": 1347.1,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2013-09-30",
+            "actual": 1348.8,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2013-10-31",
+            "actual": 1316.2,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2013-11-29",
+            "actual": 1275.8,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2013-12-31",
+            "actual": 1225.4,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2014-01-31",
+            "actual": 1244.8,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2014-02-28",
+            "actual": 1301.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2014-03-31",
+            "actual": 1336.1,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2014-04-30",
+            "actual": 1299.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2014-05-30",
+            "actual": 1287.5,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2014-06-30",
+            "actual": 1279.1,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2014-07-31",
+            "actual": 1311.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2014-08-29",
+            "actual": 1296.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2014-09-30",
+            "actual": 1238.8,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2014-10-31",
+            "actual": 1222.5,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2014-11-28",
+            "actual": 1176.3,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2014-12-31",
+            "actual": 1202.3,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2015-01-30",
+            "actual": 1251.9,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2015-02-27",
+            "actual": 1227.2,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2015-03-31",
+            "actual": 1178.6,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2015-04-30",
+            "actual": 1197.9,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2015-05-29",
+            "actual": 1199.1,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2015-06-30",
+            "actual": 1181.5,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2015-07-31",
+            "actual": 1130.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2015-08-31",
+            "actual": 1117.5,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2015-09-30",
+            "actual": 1124.5,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2015-10-30",
+            "actual": 1159.3,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2015-11-30",
+            "actual": 1085.7,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2015-12-31",
+            "actual": 1068.3,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2016-01-29",
+            "actual": 1097.4,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2016-02-29",
+            "actual": 1199.9,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2016-03-31",
+            "actual": 1246.3,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2016-04-29",
+            "actual": 1242.3,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2016-05-31",
+            "actual": 1259.4,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2016-06-30",
+            "actual": 1276.4,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2016-07-29",
+            "actual": 1337.3,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2016-08-31",
+            "actual": 1341.1,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2016-09-30",
+            "actual": 1326.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2016-10-31",
+            "actual": 1266.6,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2016-11-30",
+            "actual": 1236.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2016-12-30",
+            "actual": 1151.4,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2017-01-31",
+            "actual": 1192.6,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2017-02-28",
+            "actual": 1234.4,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2017-03-31",
+            "actual": 1231.1,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2017-04-28",
+            "actual": 1265.6,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2017-05-31",
+            "actual": 1245.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2017-06-30",
+            "actual": 1260.3,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2017-07-31",
+            "actual": 1236.2,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2017-08-31",
+            "actual": 1282.3,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2017-09-29",
+            "actual": 1315.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2017-10-31",
+            "actual": 1279.5,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2017-11-30",
+            "actual": 1282.3,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2017-12-29",
+            "actual": 1261.3,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2018-01-31",
+            "actual": 1331.7,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2018-02-28",
+            "actual": 1331.5,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2018-03-30",
+            "actual": 1324.7,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2018-04-30",
+            "actual": 1334.7,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2018-05-31",
+            "actual": 1303.0,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2018-06-29",
+            "actual": 1281.6,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2018-07-31",
+            "actual": 1238.5,
+            "predicted": 1370.48
+          },
+          {
+            "date": "2018-08-31",
+            "actual": 1201.3,
+            "predicted": 1370.48
+          }
+        ]
+      },
+      "comparison": [
+        {
+          "model": "Multiple Regression",
+          "r2": 0.9225921312458472,
+          "rmse": 52.14145849976867
+        },
+        {
+          "model": "SARIMA (ARIMA(1,1,1))",
+          "r2": -0.0018702353101625047,
+          "rmse": 187.5842438813888
+        }
+      ]
+    },
+    "india": {
+      "winner": "Multiple Regression",
+      "regression": {
+        "name": "Multiple Regression",
+        "r2": 0.41789908360570716,
+        "rmse": 71.45766720345115,
+        "features": [
+          "lag_1",
+          "lag_2",
+          "ma_3",
+          "ma_12"
+        ],
+        "explanation": "Predicts the current month using lagged prices and moving averages from prior months only. Evaluated with a chronological train/test split.",
+        "actualVsPredicted": [
+          {
+            "date": "2017-07-31",
+            "actual": 2820.81,
+            "predicted": 2877.03
+          },
+          {
+            "date": "2017-08-31",
+            "actual": 2900.35,
+            "predicted": 2813.81
+          },
+          {
+            "date": "2017-09-30",
+            "actual": 2986.13,
+            "predicted": 2901.26
+          },
+          {
+            "date": "2017-10-31",
+            "actual": 2954.87,
+            "predicted": 2975.78
+          },
+          {
+            "date": "2017-11-30",
+            "actual": 2942.23,
+            "predicted": 2932.5
+          },
+          {
+            "date": "2017-12-31",
+            "actual": 2868.58,
+            "predicted": 2923.74
+          },
+          {
+            "date": "2018-01-31",
+            "actual": 2966.71,
+            "predicted": 2852.58
+          },
+          {
+            "date": "2018-02-28",
+            "actual": 3039.43,
+            "predicted": 2959.38
+          },
+          {
+            "date": "2018-03-31",
+            "actual": 3046.71,
+            "predicted": 3017.73
+          },
+          {
+            "date": "2018-04-30",
+            "actual": 3108.67,
+            "predicted": 3013.48
+          },
+          {
+            "date": "2018-05-31",
+            "actual": 3117.32,
+            "predicted": 3072.45
+          },
+          {
+            "date": "2018-06-30",
+            "actual": 3083.03,
+            "predicted": 3071.41
+          },
+          {
+            "date": "2018-07-31",
+            "actual": 3011.03,
+            "predicted": 3035.21
+          },
+          {
+            "date": "2018-08-31",
+            "actual": 2968.58,
+            "predicted": 2968.16
+          },
+          {
+            "date": "2018-09-30",
+            "actual": 3053.37,
+            "predicted": 2936.26
+          },
+          {
+            "date": "2018-10-31",
+            "actual": 3166.13,
+            "predicted": 3026.22
+          },
+          {
+            "date": "2018-11-30",
+            "actual": 3130.25,
+            "predicted": 3125.42
+          }
+        ]
+      },
+      "sarima": {
+        "name": "SARIMA (AR(1), d=0)",
+        "label": "AR(1), d=0",
+        "order": [
+          1,
+          0,
+          0
+        ],
+        "seasonalOrder": [
+          0,
+          0,
+          0,
+          12
+        ],
+        "r2": 0.18277446988627455,
+        "rmse": 84.66826403263305,
+        "explanation": "Seasonal ARIMA candidate selected by lowest test RMSE. Produces a multi-step forecast over the same test date range as regression.",
+        "actualVsPredicted": [
+          {
+            "date": "2017-07-31",
+            "actual": 2820.81,
+            "predicted": 2889.48
+          },
+          {
+            "date": "2017-08-31",
+            "actual": 2900.35,
+            "predicted": 2897.82
+          },
+          {
+            "date": "2017-09-30",
+            "actual": 2986.13,
+            "predicted": 2906.18
+          },
+          {
+            "date": "2017-10-31",
+            "actual": 2954.87,
+            "predicted": 2914.56
+          },
+          {
+            "date": "2017-11-30",
+            "actual": 2942.23,
+            "predicted": 2922.97
+          },
+          {
+            "date": "2017-12-31",
+            "actual": 2868.58,
+            "predicted": 2931.4
+          },
+          {
+            "date": "2018-01-31",
+            "actual": 2966.71,
+            "predicted": 2939.86
+          },
+          {
+            "date": "2018-02-28",
+            "actual": 3039.43,
+            "predicted": 2948.34
+          },
+          {
+            "date": "2018-03-31",
+            "actual": 3046.71,
+            "predicted": 2956.85
+          },
+          {
+            "date": "2018-04-30",
+            "actual": 3108.67,
+            "predicted": 2965.38
+          },
+          {
+            "date": "2018-05-31",
+            "actual": 3117.32,
+            "predicted": 2973.93
+          },
+          {
+            "date": "2018-06-30",
+            "actual": 3083.03,
+            "predicted": 2982.51
+          },
+          {
+            "date": "2018-07-31",
+            "actual": 3011.03,
+            "predicted": 2991.12
+          },
+          {
+            "date": "2018-08-31",
+            "actual": 2968.58,
+            "predicted": 2999.74
+          },
+          {
+            "date": "2018-09-30",
+            "actual": 3053.37,
+            "predicted": 3008.4
+          },
+          {
+            "date": "2018-10-31",
+            "actual": 3166.13,
+            "predicted": 3017.08
+          },
+          {
+            "date": "2018-11-30",
+            "actual": 3130.25,
+            "predicted": 3025.78
+          }
+        ]
+      },
+      "comparison": [
+        {
+          "model": "Multiple Regression",
+          "r2": 0.41789908360570716,
+          "rmse": 71.45766720345115
+        },
+        {
+          "model": "SARIMA (AR(1), d=0)",
+          "r2": 0.18277446988627455,
+          "rmse": 84.66826403263305
+        }
+      ]
+    }
+  },
+  "forecast": {
+    "global": {
+      "model": "Multiple Regression",
+      "horizonMonths": 12,
+      "hasBounds": true,
+      "boundNote": "Approximate band: predicted \u00b1 1.96 \u00d7 Phase 4 test RMSE.",
+      "points": [
+        {
+          "date": "2018-09-30",
+          "predictedPrice": 1197.03,
+          "lowerBound": 1094.83,
+          "upperBound": 1299.22
+        },
+        {
+          "date": "2018-10-31",
+          "predictedPrice": 1197.55,
+          "lowerBound": 1095.36,
+          "upperBound": 1299.75
+        },
+        {
+          "date": "2018-11-30",
+          "predictedPrice": 1194.44,
+          "lowerBound": 1092.24,
+          "upperBound": 1296.64
+        },
+        {
+          "date": "2018-12-31",
+          "predictedPrice": 1190.24,
+          "lowerBound": 1088.04,
+          "upperBound": 1292.43
+        },
+        {
+          "date": "2019-01-31",
+          "predictedPrice": 1186.47,
+          "lowerBound": 1084.27,
+          "upperBound": 1288.67
+        },
+        {
+          "date": "2019-02-28",
+          "predictedPrice": 1183.33,
+          "lowerBound": 1081.13,
+          "upperBound": 1285.53
+        },
+        {
+          "date": "2019-03-31",
+          "predictedPrice": 1180.66,
+          "lowerBound": 1078.46,
+          "upperBound": 1282.86
+        },
+        {
+          "date": "2019-04-30",
+          "predictedPrice": 1178.41,
+          "lowerBound": 1076.22,
+          "upperBound": 1280.61
+        },
+        {
+          "date": "2019-05-31",
+          "predictedPrice": 1176.67,
+          "lowerBound": 1074.48,
+          "upperBound": 1278.87
+        },
+        {
+          "date": "2019-06-30",
+          "predictedPrice": 1175.36,
+          "lowerBound": 1073.16,
+          "upperBound": 1277.56
+        },
+        {
+          "date": "2019-07-31",
+          "predictedPrice": 1174.4,
+          "lowerBound": 1072.2,
+          "upperBound": 1276.6
+        },
+        {
+          "date": "2019-08-31",
+          "predictedPrice": 1173.64,
+          "lowerBound": 1071.44,
+          "upperBound": 1275.83
+        }
+      ]
+    },
+    "india": {
+      "model": "Multiple Regression",
+      "horizonMonths": 12,
+      "hasBounds": true,
+      "boundNote": "Approximate band: predicted \u00b1 1.96 \u00d7 Phase 4 test RMSE.",
+      "points": [
+        {
+          "date": "2018-12-30",
+          "predictedPrice": 3089.12,
+          "lowerBound": 2949.06,
+          "upperBound": 3229.18
+        },
+        {
+          "date": "2019-01-30",
+          "predictedPrice": 3054.51,
+          "lowerBound": 2914.45,
+          "upperBound": 3194.56
+        },
+        {
+          "date": "2019-02-28",
+          "predictedPrice": 3025.95,
+          "lowerBound": 2885.9,
+          "upperBound": 3166.01
+        },
+        {
+          "date": "2019-03-30",
+          "predictedPrice": 3002.43,
+          "lowerBound": 2862.38,
+          "upperBound": 3142.49
+        },
+        {
+          "date": "2019-04-30",
+          "predictedPrice": 2983.08,
+          "lowerBound": 2843.03,
+          "upperBound": 3123.14
+        },
+        {
+          "date": "2019-05-30",
+          "predictedPrice": 2967.2,
+          "lowerBound": 2827.15,
+          "upperBound": 3107.26
+        },
+        {
+          "date": "2019-06-30",
+          "predictedPrice": 2954.21,
+          "lowerBound": 2814.15,
+          "upperBound": 3094.26
+        },
+        {
+          "date": "2019-07-30",
+          "predictedPrice": 2943.57,
+          "lowerBound": 2803.52,
+          "upperBound": 3083.63
+        },
+        {
+          "date": "2019-08-30",
+          "predictedPrice": 2934.86,
+          "lowerBound": 2794.8,
+          "upperBound": 3074.92
+        },
+        {
+          "date": "2019-09-30",
+          "predictedPrice": 2927.71,
+          "lowerBound": 2787.65,
+          "upperBound": 3067.77
+        },
+        {
+          "date": "2019-10-30",
+          "predictedPrice": 2921.88,
+          "lowerBound": 2781.82,
+          "upperBound": 3061.94
+        },
+        {
+          "date": "2019-11-30",
+          "predictedPrice": 2917.21,
+          "lowerBound": 2777.15,
+          "upperBound": 3057.26
+        }
+      ]
+    }
+  }
+}
