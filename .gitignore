@@ -22,3 +22,8 @@ docs/
 
 # Generated artifacts
 plots/
+
+# Personal / academic write-ups (not part of the published project)
+mini-project-files/
+*.docx
+*.pptx
