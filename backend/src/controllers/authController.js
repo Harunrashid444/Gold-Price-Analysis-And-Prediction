@@ -2,7 +2,7 @@ const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 const { body } = require("express-validator");
 const { HttpError } = require("../middleware/errorHandler");
-const { hashPassword, verifyPassword } = require("../services/userStore");
+const { hashPassword, verifyPassword, publicUser } = require("../services/userStore");
 
 function cookieOptions() {
   return {
@@ -69,16 +69,9 @@ async function login(req, res, next) {
     if (!ok) {
       throw new HttpError(401, "Invalid email or password");
     }
-    const publicUser = {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      createdAt: user.createdAt,
-      updatedAt: user.updatedAt,
-    };
     const token = signToken(req.app, user.id);
     res.cookie("token", token, cookieOptions());
-    res.json({ user: publicUser, token });
+    res.json({ user: publicUser(user), token });
   } catch (err) {
     next(err);
   }
