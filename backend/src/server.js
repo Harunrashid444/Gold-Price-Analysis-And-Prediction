@@ -9,6 +9,7 @@ const { seedPipelineCollections } = require("./services/seedPipeline");
 const { loadPipelineResults } = require("./services/pipelineData");
 const authRoutes = require("./routes/auth");
 const apiRoutes = require("./routes/api");
+const profileRoutes = require("./routes/profile");
 const User = require("./models/User");
 
 async function start() {
@@ -41,6 +42,7 @@ async function start() {
   });
 
   app.use("/api/auth", authRoutes);
+  app.use("/api/profile", profileRoutes);
   app.use("/api", apiRoutes);
 
   app.use(notFound);
