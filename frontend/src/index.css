@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap");
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Design tokens — a restrained editorial / financial-research palette.
+   Warm paper ground, ink typography, hairline rules, brass accent.
+   ------------------------------------------------------------------ */
+@theme {
+  --color-canvas: #faf9f6;
+  --color-surface: #ffffff;
+  --color-sunken: #f4f2ed;
+
+  --color-ink: #191815;
+  --color-ink-2: #55524b;
+  --color-ink-3: #86827a;
+
+  --color-line: #e6e2d9;
+  --color-line-2: #d3cdc0;
+
+  --color-brass: #8a6d2f;
+  --color-brass-2: #b08d3e;
+  --color-brass-wash: #f6f1e4;
+
+  --color-global: #35505f;
+  --color-india: #9a7b2f;
+
+  --color-pos: #2e6a4e;
+  --color-neg: #9e3b2c;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Source Serif 4", ui-serif, Georgia, "Times New Roman", serif;
+
+  --radius-card: 3px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv05" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Financial data must align vertically: tabular figures everywhere numbers live. */
+  .tnum,
+  table,
+  input[type="number"] {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brass);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-brass-wash);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  /* Small-caps section eyebrow used to open each content block. */
+  .eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--color-ink-3);
+  }
+
+  .rule {
+    border-top: 1px solid var(--color-line);
+  }
+}
+
+/* Recharts overrides — strip the library's default look. */
+.recharts-surface:focus,
+.recharts-wrapper:focus {
+  outline: none;
+}
+.recharts-cartesian-axis-line,
+.recharts-cartesian-axis-tick-line {
+  stroke: var(--color-line-2);
+}
+.recharts-text {
+  font-size: 11px;
+  fill: var(--color-ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
