@@ -1,5 +1,7 @@
 # GOLD PRICE ANALYSIS AND PREDICTION
 
+Link:   https://mygoldprice-wisp-dd7a12.netlify.app/
+
 ### DATASET:
 
  We have used 2 datasets for this. The first data set has been gotten from the “World
